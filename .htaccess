@@ -1,0 +1,5 @@
+Options +FollowSymlinks
+RewriteEngine On
+RewriteRule archive_([0-9]{4})-([0-9]{2})-([0-9]{2}).html$ /index.php?archive=$1-$2-$3
+RewriteRule category_(.*).html /index.php?category=$1
+RewriteRule ([0-9,a-z,\-]+)\-idQ([0-9]+) /post.php?id=$2

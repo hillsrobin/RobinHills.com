@@ -1,0 +1,509 @@
+body{
+	margin: 0px;
+}
+img{
+	border: 0px;
+	display: block;
+}
+h2,h3{
+	margin: 0px;
+}
+.icon img,
+.icon{
+	width: 16px;
+	height: 16px;
+}
+#header{
+	/* IE Min-Width Fix */
+	/* Thank you: Cameron Moll :: http://www.cameronmoll.com */
+	width: expression(document.body.clientWidth < 1024 ? "1000px" : "auto");
+	min-width: 1000px;
+}       
+#premast{
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-width: 1px 0px;
+	height: 25px;
+	line-height: 16px;
+	overflow: hidden;
+	width: auto;
+}
+#premast .box{
+	margin: 0px auto;
+	width: 1000px;
+}
+#premast .box .left{
+	float: left;
+	padding: 4px 0px 0px 10px;
+}
+#premast .box .right{
+	float: right;
+	padding: 4px 10px 0px 0px;
+}
+#premast .box .right .menu_item{
+	float: left;
+	padding: 0px 0px 0px 5px;
+}
+.login_container{
+	position: absolute;
+	margin: 0px auto 0px -500px;
+	width: 1000px;
+	left: 50%;
+	right: 0px;
+}
+.login_box{
+	width: 998px;
+	height: 30px;
+	border-width: 0px 1px 1px 1px;
+	border-style: solid;
+}
+#masthead{
+	margin: 0px auto;
+	width: 1000px;
+}
+.login_box .username,
+.login_box .password,
+.login_box .login{
+	float: right;
+	padding: 6px 5px 3px 0px;
+}
+.login_box .username input,
+.login_box .password input{
+	height: 12px;
+	width: 110px;
+	font-size: 1.2em;
+}
+.login_box .login{
+	line-height: 16px;
+	height: 16px;
+}
+.contact_body .contact_detail input,
+.login_box .login input{
+	border-style: solid;
+	border-width: 1px;
+	
+}
+.login_box .field,
+.login_box .label{
+	float: left;
+}
+.login_box .label{
+	padding: 0px 5px;
+	line-height: 17px;
+	height: 17px;
+}
+#content{
+	width: 998px;
+	border-width: 1px;
+	border-style: solid;
+	margin: 0px auto;
+	min-height: 350px;
+	height: auto !important;
+	height: 350px;
+}
+#content .container{
+	padding: 15px 10px;
+}
+#content .box{
+	padding: 0px 0px 10px 0px;
+}
+#content .right{
+	float: left;
+	width: 255px;
+}
+#content .left{
+	float: left;
+	width: 703px;
+	padding: 0px 10px;
+}
+#content .index .right .archives div,
+#content .right .sections div,
+#content .index .right .admin div,
+#content .index .right .categories div{
+	margin: 3px 0px;
+}
+#content .index .left .post{
+	margin: 0px 0px 20px 0px;
+}
+#content .index .left .post .date_bar{
+	width: 700px;
+}
+#content .index .left .post .post_options{
+	float: right;
+	width: 132px;
+}
+#content .index .left .post .post_options .status{
+	line-height: 16px;
+	height: 16px;
+}
+#content .index .left .post .post_options .status,
+#content .index .left .post .post_options .icon{
+	float: right;
+	padding: 0px 0px 0px 3px;
+}
+#content .index .left .post .date{
+	float: left;
+	width: 551px;
+}
+#content .index .left .post .body .image{
+	float: right;
+	margin: 0px 0px 7px 10px;
+}
+#content .index .left .post .body{
+	margin: 3px 0px 8px 0px;
+}
+#content .index .left .post .body p{
+	margin: 7px 0px;
+}
+#content .index .left .post .filed{
+	float: left;
+	width: 528px;
+}
+#content .index .left .post .posted{
+	float: right;
+	text-align: right;
+	width: 175px;
+}
+#content .post_admin .element{
+	margin: 0px 0px 5px 0px;
+}
+#content .post_admin .element .label{
+	float: left;
+	width: 90px;
+	height: 25px;
+	line-height: 25px;
+	text-align: right;
+}
+#content .post_admin .element .field{
+	float: left;
+	width: 588px;
+	min-height: 25px;
+	height: auto !important;
+	height: 25px;
+	margin: 0px 0px 0px 5px;
+}
+#content .post_admin .element .field textarea{
+	width: 550px;
+	height: 250px;
+	padding: 3px;
+	overflow-y: auto;
+}
+#content .post_admin .element .field input,
+#content .post_admin .element .field select{
+	width: 500px;
+	padding: 3px;
+}
+#content .post_admin .image .field input{
+	width: 250px;
+}
+#content .post_admin .status .field select{
+	width: 105px;
+}
+#content .post_admin .postdate .field input{
+	width: 175px;
+}
+#content .post_admin .body{
+	padding: 10px 0px;
+}
+#content .post_admin .submit{
+	padding: 5px 0px 0px 0px;
+}
+#content .post_admin .submit .field input{
+	width: auto;
+	border-style: solid;
+	border-width: 1px;
+	padding: 0px;
+}
+#content .post_admin .available_categories .acategory{
+	float: left;
+	margin: 0px 3px 0px 0px; 
+}
+
+#content .post_admin .postdate_field{
+	width: 190px;
+	float: left;
+}
+
+#content .post_admin .postdate_now_label{
+	height: 30px; 
+	line-height: 25px; 
+	float: left; 
+}
+#content .post_admin .postdate_now_field{
+	height: 30px; 
+	width: 20px; 
+	float: left; 
+	line-height: 30px;
+}
+#content .post_admin #postDate_now{
+	width: auto;
+}
+#content .index .right .profile{
+	padding: 3px 3px 0px 0px;
+}
+#content .index .right .profile .avatar,
+#content .index .right .profile .overview{
+	float: left;
+}
+#content .index .right .profile .avatar{
+	width: 48px;
+}
+#content .index .right .profile .overview{
+	width: 197px;
+	text-align: justify;
+	padding: 0px 0px 0px 6px;
+}
+#content .index .right .profile .overview .handle .twitter{
+	padding: 2px 0px 0px 18px;
+	float: left;
+	width: 120px;
+}
+#content .index .right .profile .overview .handle .gplus,
+#content .index .right .profile .overview .handle .linkedin{
+	float: right;
+}
+#content .index .right .profile .overview .handle .linkedin{
+	padding-left: 2px;
+}
+#content .index .right .profile .overview .text{
+	padding-top: 3px;
+}
+#content .index .right .profile .update{
+	padding: 7px 0px 0px 0px;
+	text-align: justify;
+}
+#footer{
+	width: 998px;
+	margin: 5px auto 10px auto;
+	text-align: right;
+	min-height: 25px;
+	height: auto !important;
+	height: 25px;
+}
+
+#footer .left .validate,
+#footer .left .themes,
+#footer .left{
+	float: left;
+}
+#footer .left .themes{
+	padding-left: 25px;
+}
+#footer .right{
+	float: right;
+}
+/* Resume */
+.contact_page h2,
+.resume h2{
+	margin: 10px 0px 5px 0px;
+}
+
+.resume p{
+	margin: 0px;
+	padding: 0px;
+}
+.resume .myname{
+	width: 300px;
+	float: left;
+}
+.resume .download{
+	width: 200px;
+	float: right;
+}
+.resume .download .format,
+.resume .download .download_title{
+	float: right;
+}
+.resume .download .download_title{
+	padding: 0px 3px 0px 0px;
+	line-height: 16px;
+	height: 16px;
+}
+.resume .download .format{
+	padding: 0px 0px 0px 2px;
+}
+.resume .profile{
+	margin: 15px 0px;
+}
+.contact_page .address,
+.resume .contact .address{
+	margin: 5px 0px;
+}
+.resume .expertise li{
+	list-style-type: none;
+}
+.resume .expertise ul{
+	padding: 0px;
+	margin: 2px 0px 10px 0px;
+}
+.resume .experience h3{
+	margin: 0px 0px 3px 0px;
+}
+.resume .education .program,
+.resume .experience .position{
+	margin: 0px 0px 10px 0px;
+}
+.resume .experience .organization,
+.resume .experience .duration{
+	float: left;
+}
+.resume .experience .duration{
+	margin: 0px 0px 0px 5px;
+	line-height: 18px;
+	height: 18px;
+}
+.resume .experience .title{
+	margin: 0px 0px 3px 0px;
+}
+.resume .education h3{
+	margin: 0px 0px 3px 0px;
+}
+
+/* Porfolio */
+.portfolio .project{
+	padding: 2px 0px 10px 0px;
+}
+.portfolio .project .screenshots{
+	width: 500px;
+	border: 1px dashed;
+	border-bottom-style: solid;
+}
+.portfolio .project .screenshots .image{
+	float: left;
+	overflow: hidden;
+	width: 500px;
+}
+.portfolio .project .screenshots .left_shot{
+	width: 250px;
+}
+.portfolio .project .screenshots .right_shot{
+	width: 249px;
+	border-left: 1px solid;
+}
+.portfolio .project .screenshots .left_shot img{
+	width: 250px;
+	height: 173px;
+}
+.portfolio .project .screenshots .right_shot img{
+	width: 249px;
+	height: 173px;
+}
+.portfolio .project .content{
+	border: 1px dashed;
+	border-width: 0px 1px 1px 1px;
+	width: 500px;
+}
+.portfolio .project .content .padding{
+	padding: 10px 6px;
+}
+.portfolio .project .content .organization,
+.portfolio .project .content .technologies,
+.portfolio .project .content .location{
+	padding: 0px 0px 3px 0px;
+}
+.portfolio .project .content .kickit,
+.portfolio .project .content .good{
+	float: left;
+}
+.portfolio .project .content .kickit{
+	width: 110px;
+	font-weight: bold;
+	line-height: 16px;
+	height: 16px;
+}
+.portfolio .project .content .good{
+	width: 273px;
+}
+.portfolio .project .title{
+	padding: 0px 0px 5px 0px;
+}
+
+/* Contact Page */
+.contact_page .contact_label,
+.contact_page .contact_detail{
+	float: left;
+	padding: 6px 0px;
+	
+}
+.contact_page .confirm{
+	padding: 10px;
+	border: 1px solid;
+	width: 450px
+}
+.contact_page .contact_label{
+	width: 140px;
+	text-align: right;
+}
+.contact_page .contact_detail{
+	padding-left: 10px;
+	padding-bottom: 0px;
+}
+.contact_body{
+	margin: 15px 0px 0px 0px;
+}
+.contact_body .contact_detail input,
+.contact_body .contact_detail textarea{
+	width: 200px;
+}
+.contact_body .contact_detail textarea{
+	height: 120px;
+	overflow-y: auto;
+}
+.contact_body .contact_label{
+	margin: 3px 0px 0px 0px;
+}
+.contact_body .contact_me{
+	margin: 15px 0px 0px 150px;
+}
+.contact_body .required_field{
+	position: relative;
+	left: 150px;	
+}
+.contact_body h3{
+	margin: 0px 0px 5px 0px;
+}
+
+/* Login Page */
+.login{
+	width: 275px;
+	margin: 0px auto;
+}
+.login h2{
+	margin: 3px 0px;
+}
+.login .label,
+.login .field{
+	float: left;
+}
+.contact_body .contact_me input,
+.contact_body .contact_detail textarea,
+.contact_body .contact_detail input,
+.login .field input{
+	padding: 3px;
+	border: 1px solid;
+}
+.login .label{
+	width: 80px;
+	line-height: 16px;
+	height: 16px;
+}
+.login .username,
+.login .password{
+	padding: 0px 0px 5px 0px;
+}
+.login .login_button{
+	text-align: center;
+}
+.login .login_button input{
+	width: auto;
+	border-width: 1px;
+	border-style: solid;
+}
+.login .failed{
+	text-align: center;
+	padding: 0px 0px 3px 0px;
+}
+.clear{
+	clear: both;
+}
+

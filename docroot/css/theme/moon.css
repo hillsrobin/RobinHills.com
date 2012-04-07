@@ -1,0 +1,25 @@
+/** Night Time **/
+body{
+	background-color: #213E67;
+}
+#premast{
+	background-color: #3E3F41;
+	border-color: #333;
+}
+#content{
+	background-color: #FFFCF6;
+	border-color: #333;
+}
+.contact_body .contact_me input,
+.login .login_button input,
+#content .post_admin .submit .field input{
+	background-color: #3E3F41;
+	border-color: #333;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.contact_body .contact_me input{
+	text-transform: none;
+	font-weight: normal;
+}

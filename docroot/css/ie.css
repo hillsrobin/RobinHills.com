@@ -1,0 +1,5 @@
+.login_box .username input,
+.login_box .password input{
+	height: auto !important;
+	font-size: 1.0em;
+}
