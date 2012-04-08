@@ -1,6 +1,9 @@
 <?PHP
 	session_start();
 
+	// Set a default if it does not exist
+	!isset($_SESSION['User']) ? $_SESSION['User'] = '' :  null;
+	
 	if (isset($_COOKIE['Logged']))
 	{
 		if((!isset($_SESSION['User'])) || ($_SESSION['User'] == ''))

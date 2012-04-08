@@ -27,7 +27,7 @@ if(isset($_GET['id']))
 		$filename = $db->QueryAsRow('SELECT filename FROM images WHERE id='.intval($_GET['id']));
 		$filename = $filename['filename'];
 	}
-	
+		
 	$img = new Image(IMAGE_PATH.$filename);
 
 	// Make sure not to stretch images
@@ -40,8 +40,9 @@ if(isset($_GET['id']))
 		$height = $orig_h;
 	
 	if(($width > 0) || ($height > 0))		// Only resize if there is a Height or Width set
-		$img->resize($width,$height,$aspect,$fill);
+		$img->resize($width,$height,$aspect);
 	
 	$img->show();
+	
 }
 ?>
