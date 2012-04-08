@@ -14,12 +14,7 @@
 				$_SESSION['User'] = $id_res['id'];
 			else
 			{	
-				$_SERVER['DEV'] == 'TRUE' ? $cookie_domain = '10.10.1.97' : $cookie_domain = 'robinhills.com';
-				
-				if(!is_numeric(str_replace('.','',$cookie_domain)))
-					$cookie_domain = '.'.$cookie_domain;
-				
-				setcookie ("Logged", "", time( ) - 1, "/", $cookie_domain);
+				setcookie ("Logged", "", time( ) - 1, "/", COOKIE_DOMAIN);
 				unset($_SESSION['User']);
 			}
 		}

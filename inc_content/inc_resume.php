@@ -3,9 +3,9 @@
 		<a name="contact"></a>
 		<div class="myname"><h2>ROBIN HILLS</h2></div>
 		<div class="download">
-		<div class="format"><a href="<?PHP echo $_SERVER['DEV'] == 'TRUE' ? '?download=word' : '/resume-word.html';?>" title="Download Resume (Word Document)"><img src="images/icon_word.gif" alt="Microsoft Word Document" title="Microsoft Word Document"/></a></div>
-			<div class="format"><a href="<?PHP echo $_SERVER['DEV'] == 'TRUE' ? '?download=pdf' : '/resume-pdf.html';?>" title="Download Resume (PDF Document)"><img src="images/icon_pdf.gif" alt="Acrobat PDF" title="Acrobat PDF"/></a></div>
-			<div class="format"><a href="<?PHP echo $_SERVER['DEV'] == 'TRUE' ? '?download=odt' : '/resume-odt.html';?>" title="Download Resume (OpenOffice.Org Document)"><img src="images/icon_doc.gif" alt="OpenOffice.Org Document" title="OpenOffice.Org Document"/></a></div>
+		<div class="format"><a href="<?PHP echo MODE_DEV ? '?download=word' : '/resume-word.html';?>" title="Download Resume (Word Document)"><img src="images/icon_word.gif" alt="Microsoft Word Document" title="Microsoft Word Document"/></a></div>
+			<div class="format"><a href="<?PHP echo MODE_DEV ? '?download=pdf' : '/resume-pdf.html';?>" title="Download Resume (PDF Document)"><img src="images/icon_pdf.gif" alt="Acrobat PDF" title="Acrobat PDF"/></a></div>
+			<div class="format"><a href="<?PHP echo MODE_DEV ? '?download=odt' : '/resume-odt.html';?>" title="Download Resume (OpenOffice.Org Document)"><img src="images/icon_doc.gif" alt="OpenOffice.Org Document" title="OpenOffice.Org Document"/></a></div>
 			<div class="download_title">Download Resume</div>
 			<div class="clear"></div>
 		</div>

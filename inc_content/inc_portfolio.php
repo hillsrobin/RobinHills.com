@@ -113,7 +113,7 @@
 			</div>
 		</div>
 	</div>
-	<?PHP if($_SERVER['DEV'] == 'TRUE')
+	<?PHP if(MODE_DEV)
 	{
 		?>
 	<div class="projects">

@@ -4,7 +4,7 @@
 	<div class="sections">
 		<div class="section"><a href="portfolio.php#web" title="Web Development">Web Development</a></div>
 		<div class="section"><a href="portfolio.php#csharp" title="C#">C#</a></div>
-		<?PHP if($_SERVER['DEV'] == 'TRUE')
+		<?PHP if(MODE_DEV)
 		{
 			?>
 			<div class="section"><a href="portfolio.php#projects" title="On Going Projects">On Going Projects</a></div>

@@ -97,8 +97,7 @@ class SimpleMySQLTest extends PHPUnit_Framework_TestCase
      function testDebugStore()
      {
      	 global $_SERVER;
-     	 $_SERVER['DEV'] = 'TRUE';
-     	 
+     	      	 
      	 $result = $this->db->Query("SELECT * FROM test_table");
      	 
      	 $this->assertEquals(1,count($this->db->Debug()));

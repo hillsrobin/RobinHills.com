@@ -8,7 +8,7 @@ $db_profile = array(
 						'host' => 'localhost'
 						);
 
-
+define("MODE_DEV",true);
 
 // Autodetect paths
 // Modify if required						

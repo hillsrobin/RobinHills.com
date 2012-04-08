@@ -120,7 +120,7 @@ class SimpleMySQL
 		$xml_output = '';
 		$resQuery = mysql_query($query) or $this->log[] = array('query' => $query, 'error' => mysql_error());
 		
-		if((isset($_SERVER['DEV']))&&($_SERVER['DEV'] == 'TRUE')) // Only dev debug
+		if(MODE_DEV) // Only dev debug
 			$this->debug[] = $query;
 		
 		$arrayResults = array();

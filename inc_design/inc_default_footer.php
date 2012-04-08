@@ -6,7 +6,7 @@
 		<div class="right">&copy; 2009-<?PHP echo date('Y');?> robinhills.com. All Rights Reserved.</div>
 		<div class="clear"></div>
 		<?PHP
-		if($_SERVER['DEV'] != 'TRUE')
+		if(!MODE_DEV)
 		{
 			// Analytics Code
 			?>

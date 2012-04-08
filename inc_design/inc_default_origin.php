@@ -1,13 +1,14 @@
 <?PHP
-	if($_SERVER['DEV'] == 'TRUE')
+
+	include_once('../inc_scripts/inc_scripts_config.php');
+	
+	if(MODE_DEV)
 	{
 		error_reporting(E_ALL & ~E_NOTICE);
 		ini_set('display_errors',1);
 	}
 	
 	include_once('../inc_scripts/inc_scripts_common_mysql.php');
-	include_once('../inc_scripts/inc_scripts_config.php');
-	
 	include_once('../inc_scripts/inc_scripts_class_utils.php');
 	include_once('../inc_scripts/inc_scripts_class_csstheme.php');
 	

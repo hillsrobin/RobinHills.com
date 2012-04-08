@@ -1,5 +1,7 @@
 <?PHP
 
+// Disable error output <-- will break image output
+ini_set('display_errors',0);
 include_once('../inc_scripts/inc_scripts_config.php');
 include_once('../inc_scripts/inc_scripts_class_utils.php');
 include_once('../inc_scripts/inc_scripts_class_image.php');
