@@ -7,7 +7,7 @@ $db_profile = array(
 						'database' => 'main', 
 						'host' => 'localhost'
 						);
-
+// Glorified debug mode
 define("MODE_DEV",true);
 
 // Autodetect paths
