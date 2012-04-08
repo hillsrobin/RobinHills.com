@@ -6,6 +6,7 @@
 include_once(dirname(__FILE__).'/inc_scripts_class_profile.php');
 
 !defined('TWITTER_API_BASE') ? define('TWITTER_API_BASE','https://api.twitter.com') : null;
+!defined('TWITTER_STATUS_BASE') ? define('TWITTER_STATUS_BASE','https://twitter.com/#!/%s/status/%s') : null;
 
 /**
 * Twitter Profile class
@@ -46,8 +47,16 @@ class Twitter extends Profile
 		else
 			$this->profile = $cache;
 		
+		// Make any links clickable
 		if($this->convertLinks)
 			$this->anchorLinks($this->profile['status']['text']);
+		
+		// Link the ... in truncated tweets to the status update
+		if(preg_match("/\.\.\.$/",$this->profile['status']['text']) > 0)
+		{
+			$read_more_url = sprintf(TWITTER_STATUS_BASE,$username,$this->profile['status']['id']);
+			$this->profile['status']['text'] = preg_replace("/\.\.\.$/","<a href=\"".$read_more_url."\" title=\"\">...</a>",$this->profile['status']['text']);
+		}
 		
 		return $this->getProfile();
 	}
