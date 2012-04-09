@@ -253,17 +253,18 @@ h2,h3{
 	text-align: justify;
 	padding: 0px 0px 0px 6px;
 }
+/*
 #content .index .right .profile .overview .handle .twitter{
 	padding: 2px 0px 0px 18px;
 	float: left;
 	width: 120px;
 }
+*/
+#content .index .right .profile .overview .handle .twitter,
 #content .index .right .profile .overview .handle .gplus,
 #content .index .right .profile .overview .handle .linkedin{
-	float: right;
-}
-#content .index .right .profile .overview .handle .linkedin{
-	padding-left: 2px;
+	float: left;
+	padding-right: 2px;
 }
 #content .index .right .profile .overview .text{
 	padding-top: 3px;

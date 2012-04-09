@@ -31,9 +31,6 @@ a{
 	background-color: #ede1bb;
 	border-color: #64412d;
 }
-#content .index .right .profile .overview .handle .twitter{
-	background: transparent url('../images/icon_twitter.gif') center left no-repeat;
-}
 /* Portfolio */
 .contact_page .confirm,
 .portfolio .project .content{
