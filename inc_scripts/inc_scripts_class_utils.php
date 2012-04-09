@@ -4,21 +4,44 @@ class Utils
 {
 	public static function Redirect($url)
 	{
-		// var_dump(debug_backtrace());
-		// die();
-		if(!headers_sent())
-			header('Location:'.$url);
-		else
-		{
-			?>
-			<script type="text/javascript">
-				window.location = '<?PHP echo $url;?>';
-			</script>
-			<?PHP
+	
+		if($url == '__LAST_PAGE__')
+		{	
+			// Grab the last page from the $_GET or $_SERVER['HTTP_REFERER']
+			if(isset($_GET['return']) && strlen(trim($_GET['return'])) > 0)
+				$url = urldecode($_GET['return']);
+
+			else if(isset($_SERVER['HTTP_REFERER'])&& strlen(trim($_SERVER['HTTP_REFERER'])) > 0)
+				$url = $_SERVER['HTTP_REFERER'];
 			
-			die();
+			if(
+				(preg_match("/".COOKIE_DOMAIN."/",$url) == 0)&& // Absolute redirects only to the COOKIE_DOMAIN
+				(preg_match("/^http/",$url) > 0) // Relative redirects allowed
+				)
+				$url = false;
+			
+			// Default to / (if all else fails
+			if($url == '__LAST_PAGE__')
+				$url = '/';
 		}
+		
+		if($url !== false)
+		{
+			if(!headers_sent())
+				header('Location:'.$url);
+			else
+			{
+				?>
+				<script type="text/javascript">
+					window.location = '<?PHP echo $url;?>';
+				</script>
+				<?PHP
+				
+				die();
+			}
+		}	
 	}
+	
 	
 	public static function nl2p($string, $line_breaks = true)
 	{

@@ -15,7 +15,7 @@ if((!$db->Error())&&($_POST['username'] != ""))
 	
 	$_SESSION['User'] = $res['id'];
 	
-	Utils::Redirect('index.php');
+	Utils::Redirect('__LAST_PAGE__');
 }
 else
 	Utils::Redirect('login.php?error');

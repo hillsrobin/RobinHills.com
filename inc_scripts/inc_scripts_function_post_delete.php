@@ -5,5 +5,5 @@ include('../inc_scripts/inc_scripts_class_posts.php');
 $post = new Posts(intval($_GET['id']));
 $post->Delete();
 
-Utils::Redirect('index.php');
+Utils::Redirect('blog.php');
 ?>

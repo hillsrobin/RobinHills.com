@@ -1,5 +1,15 @@
 <?PHP
 	include('../inc_design/inc_default_origin.php');
+	include_once('../inc_scripts/inc_scripts_class_posts.php');
+	
+	$posts = new Posts();
+	
+	if(isset($_GET['category']))
+		$posts->byCategory(urldecode(str_replace('-','+',$_GET['category'])));
+	else if(isset($_GET['archive']))
+		$posts->byMonth(urldecode($_GET['archive']));
+	else
+		$posts->All();
 	
 	include('../inc_design/inc_default_doctype.php'); 
 ?>
@@ -27,10 +37,23 @@
 			<div class="right">
 				<?PHP
 					include('../inc_design/inc_default_left_profile.php');
+					include('../inc_design/inc_default_left_administration.php');
+					include('../inc_design/inc_default_left_archives.php');
+					include('../inc_design/inc_default_left_categories.php');
 				?>
 			</div>
 			<div class="left">
-				Left
+				<?PHP 
+				if(!$posts->isError)
+				{
+					foreach($posts->Results as $post)
+					{
+						include('../inc_design/inc_post_body.php');
+					}
+				}
+				else
+					echo 'No Posts'; 
+				?>
 			</div>
 			<div class="clear"></div>
 		</div>

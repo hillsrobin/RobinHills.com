@@ -9,7 +9,7 @@
 				<div class="right">
 					<div class="menu_item"><a href="/">Home</a></div>
 					<div class="menu_item"><a href="resume.php">Resume</a></div>
-				<!--	<div class="menu_item"><a href="portfolio.php">Portfolio</a></div> -->
+					<div class="menu_item"><a href="blog.php">Blog</a></div>
 					<div class="menu_item"><a href="contact.php">Contact</a></div>
 					<?PHP
 					if(is_numeric($_SESSION['User']))

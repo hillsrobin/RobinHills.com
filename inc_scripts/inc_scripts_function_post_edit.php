@@ -25,6 +25,6 @@ $post = new Posts(intval($_REQUEST['id']));
 
 $post->Update($post_data);
 
-Utils::Redirect('index.php');
+Utils::Redirect('blog.php');
 
 ?>

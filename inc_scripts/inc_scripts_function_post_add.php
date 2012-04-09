@@ -24,5 +24,5 @@ if(intval($filename[0]) != -1)
 $post = new Posts();
 $post->Add($post_data);
 
-Utils::Redirect('index.php');
+Utils::Redirect('blog.php');
 ?>

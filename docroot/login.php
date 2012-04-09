@@ -2,7 +2,7 @@
 	include('../inc_design/inc_default_origin.php');
 	
 	if(is_numeric($_SESSION['User']))
-		Utils::Redirect('index.php');
+		Utils::Redirect('__LAST_PAGE__');
 	
 	include('../inc_design/inc_default_doctype.php'); 
 ?>
@@ -40,7 +40,7 @@
 				<?PHP
 			}
 			?>
-			<form id="login" action="function.php?action=login" method="post" autocomplete="off">
+			<form id="login" action="function.php?action=login&return=<?PHP echo urlencode((isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'blog.php'));?>" method="post" autocomplete="off">
 			<div class="username">
 				<div class="label"><label for="username">Username</label></div>
 				<div class="field"><input type="text" name="username" id="username" value="" tabindex="1"/></div>
