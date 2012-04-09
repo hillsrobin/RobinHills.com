@@ -16,8 +16,9 @@
 	<!-- Header -->
 	<div id="header">
 		<?PHP
-			include('../inc_design/inc_default_header.php'); 
+			include('../inc_design/inc_default_header_premast.php'); 
 		?>
+		<div id="top"></div>
 	</div>
 	<!-- END Header -->
 	
@@ -25,12 +26,10 @@
 	<div id="content">
 		<div class="container index">
 			<div class="right">
-				<?PHP
-					include('../inc_design/inc_default_left_profile.php');
-				?>
+				
 			</div>
 			<div class="left">
-				Left
+				
 			</div>
 			<div class="clear"></div>
 		</div>

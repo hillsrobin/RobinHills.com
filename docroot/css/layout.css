@@ -57,9 +57,15 @@ h2,h3{
 	border-width: 0px 1px 1px 1px;
 	border-style: solid;
 }
+#top,
 #masthead{
 	margin: 0px auto;
 	width: 1000px;
+}
+#top{
+	min-height: 250px;
+	height: auto !important;
+	height: 250px;
 }
 .login_box .username,
 .login_box .password,
