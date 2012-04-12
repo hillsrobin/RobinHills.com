@@ -1,5 +1,6 @@
+		<?PHP echo $theme->getJavascript();?>
 		<div class="left">
-			<div class="validate"><a href="http://www.validome.org/validate/?uri=http://www.robinhills.com" title="Validate">Valid <abbr title="eXtensible HyperText Markup Language">XHTML</abbr> 1.0 Strict</a></div>
+			<div class="validate">Valid <abbr title="eXtensible HyperText Markup Language">XHTML</abbr> 1.0 Strict</div>
 			<div class="themes"><a href="" rel="csstheme" name="default"<?PHP echo $theme->getName() == "default" ? ' class="active"' : '';?>>Day</a> | <a href="" rel="csstheme" name="moon"<?PHP echo $theme->getName() == "moon" ? ' class="active"' : '';?>>Night</a></div>
 			<div class="clear"></div>
 		</div>

@@ -38,13 +38,18 @@ class Posts extends SimpleMySQL
 		$this->isError = $this->Error();
 	}
 	
-	public function All($filter = false)
+	public function All($filter = false, $size = 0)
 	{
 		if($filter !== false)
 			$filter = 'WHERE '.$filter.' ';
 		else
 			$filter = '';
 		
+		if($size > 0)
+			$limit = ' LIMIT '.$size;
+		else
+			$limit = '';
+			
 		if($this->user_id == -1)
 		{
 			if($filter != '')
@@ -61,7 +66,8 @@ class Posts extends SimpleMySQL
 												'LEFT JOIN users '.
 												'ON users.id = posts.user_id '.
 												$filter.
-												'ORDER BY postDate DESC'
+												'ORDER BY postDate DESC'.
+												$limit
 												);
 		
 		$this->isError = $this->Error();

@@ -63,9 +63,7 @@ h2,h3{
 	width: 1000px;
 }
 #top{
-	min-height: 250px;
-	height: auto !important;
-	height: 250px;
+	height: 10px;
 }
 .login_box .username,
 .login_box .password,
@@ -110,12 +108,23 @@ h2,h3{
 #content .container{
 	padding: 15px 10px;
 }
+#content .index{
+	padding: 10px;
+}
 #content .box{
 	padding: 0px 0px 10px 0px;
 }
 #content .right{
 	float: left;
 	width: 255px;
+}
+#content .col{
+	float: left;
+	width: 315px;
+	padding-left: 10px;
+}
+#content .first{
+	padding-left: 0px;
 }
 #content .left{
 	float: left;
@@ -169,6 +178,14 @@ h2,h3{
 	float: right;
 	text-align: right;
 	width: 175px;
+}
+#content .index .skills div:not([class="clear"]){
+	float: left;
+	padding-right: 5px;
+	font-size: 1.2em;
+}
+#content .index .skills h3:nth-of-type(2){
+	padding-top: 10px;
 }
 #content .post_admin .element{
 	margin: 0px 0px 5px 0px;

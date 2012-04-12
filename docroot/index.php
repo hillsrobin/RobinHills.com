@@ -25,11 +25,41 @@
 	<!-- Content -->
 	<div id="content">
 		<div class="container index">
-			<div class="right">
-				
+			<div class="col first">
+				<h3>Where to find me</h3>
 			</div>
-			<div class="left">
-				
+			<div class="col skills">
+				<h3>Skills</h3>
+				<div>Web design</div>
+				<div>Web development</div>
+				<div>Agile development</div>
+				<div>Solution design</div>
+				<div>Infrastructure planning</div>
+				<div>Server administation</div>
+				<div>Database optimization</div>
+				<div>Performance tuning</div>
+				<div class="clear"></div>
+			
+				<h3>Technologies</h3>
+				<div>PHP 5</div>
+				<div>MySQL Server</div>
+				<div>MySQL Cluster</div>
+				<div>XHTML</div>
+				<div>CSS</div>
+				<div>JavaScript</div>
+				<div>jQuery &amp; MooTools</div>
+				<div>Red Hat &amp; Debian/GNU Linux</div>
+				<div>C# Mono/.Net</div>
+				<div>Subversion</div>
+				<div>Apache Solr/Lucene</div>
+				<div>Oracle</div>
+				<div>CA Clarity PPM Studio</div>
+				<div class="clear"></div>
+			</div>
+			<div class="col">
+				<div class="infobox">
+					<img src="http://www.gravatar.com/avatar/<?=md5("robin.hills@gmail.com");?>?s=96" alt="" title=""/>
+				</div>
 			</div>
 			<div class="clear"></div>
 		</div>
