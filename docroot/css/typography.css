@@ -36,6 +36,10 @@ a:hover{
 	font-size: 0.8em;
 	text-transform: uppercase;
 }
+#content .tagline{
+	font-weight: bold;
+	font-size: 1.2em;
+}
 #content .index .right .archives div,
 #content .right .sections div,
 #content .index .right .admin div,

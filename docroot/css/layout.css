@@ -118,6 +118,11 @@ h2,h3{
 	float: left;
 	width: 255px;
 }
+#content .bin{
+	float: left;
+	width: 630px;
+	padding-left: 10px;
+}
 #content .col{
 	float: left;
 	width: 315px;
@@ -130,6 +135,9 @@ h2,h3{
 	float: left;
 	width: 703px;
 	padding: 0px 10px;
+}
+#content .index .skills{
+	float: right;
 }
 #content .index .right .archives div,
 #content .right .sections div,
@@ -179,12 +187,18 @@ h2,h3{
 	text-align: right;
 	width: 175px;
 }
-#content .index .skills div:not([class="clear"]){
-	float: left;
-	padding-right: 5px;
-	font-size: 1.2em;
+
+#content .index .skills div{
+	font-size: 1.1em;
 }
-#content .index .skills h3:nth-of-type(2){
+#content .index .skills h3{
+	font-size: 1.0em;
+}
+#content .index .skills .techbox div,
+#content .index .skills .skillsbox div{
+	padding-right: 5px;
+}
+#content .index .skills .techbox h3{
 	padding-top: 10px;
 }
 #content .post_admin .element{

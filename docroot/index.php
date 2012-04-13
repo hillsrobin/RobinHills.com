@@ -25,41 +25,55 @@
 	<!-- Content -->
 	<div id="content">
 		<div class="container index">
-			<div class="col first">
-				<h3>Where to find me</h3>
+			<div class="col">
+				<div class="tagline">See what's inside <br />(insert fancy arrow here)</div>
+				<div class="plug"><a href="http://github.com/diilbert/RobinHills.com/" title="Fork me on GitHub"><img src="images/logo_github_huge.png" alt="Fork me on GitHub" title="Fork me on GitHub"/></a></div>
 			</div>
-			<div class="col skills">
-				<h3>Skills</h3>
-				<div>Web design</div>
-				<div>Web development</div>
-				<div>Agile development</div>
-				<div>Solution design</div>
-				<div>Infrastructure planning</div>
-				<div>Server administation</div>
-				<div>Database optimization</div>
-				<div>Performance tuning</div>
-				<div class="clear"></div>
-			
-				<h3>Technologies</h3>
-				<div>PHP 5</div>
-				<div>MySQL Server</div>
-				<div>MySQL Cluster</div>
-				<div>XHTML</div>
-				<div>CSS</div>
-				<div>JavaScript</div>
-				<div>jQuery &amp; MooTools</div>
-				<div>Red Hat &amp; Debian/GNU Linux</div>
-				<div>C# Mono/.Net</div>
-				<div>Subversion</div>
-				<div>Apache Solr/Lucene</div>
-				<div>Oracle</div>
-				<div>CA Clarity PPM Studio</div>
-				<div class="clear"></div>
+			<div class="col">
+				<h3>Latest</h3>
+				<p>Twitter status updates</p>
+				<p>Last three blog posts</p>
 			</div>
 			<div class="col">
 				<div class="infobox">
 					<img src="http://www.gravatar.com/avatar/<?=md5("robin.hills@gmail.com");?>?s=96" alt="" title=""/>
+					<p>Bio</p>
 				</div>
+			</div>
+			<div class="col skills">
+				<p>Do something creative here <strong>Usually is pretty dry</strong></p>
+				<div class="skillbox">
+					<h3>Skills</h3>
+					<div>Web design</div>
+					<div>Web development</div>
+					<div>Agile development</div>
+					<div>Solution design</div>
+					<div>Infrastructure planning</div>
+					<div>Server administation</div>
+					<div>Database optimization</div>
+					<div>Performance tuning</div>
+				</div>
+				<div class="techbox">
+					<h3>Technologies</h3>
+					<div>PHP 5</div>
+					<div>MySQL Server</div>
+					<div>MySQL Cluster</div>
+					<div>XHTML</div>
+					<div>CSS</div>
+					<div>JavaScript</div>
+					<div>jQuery &amp; MooTools</div>
+					<div>Red Hat &amp; Debian/GNU Linux</div>
+					<div>C# Mono/.Net</div>
+					<div>Subversion</div>
+					<div>Apache Solr/Lucene</div>
+					<div>Oracle</div>
+					<div>CA Clarity PPM Studio</div>
+				</div>
+			</div>
+			
+			
+			<div class="col first">
+				&nbsp;
 			</div>
 			<div class="clear"></div>
 		</div>
