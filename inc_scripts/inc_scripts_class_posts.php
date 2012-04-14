@@ -33,7 +33,13 @@ class Posts extends SimpleMySQL
 		if($id !== false)
 			$this->id = $id;
 		
-		$this->Results = $this->QueryAsRow('SELECT * FROM posts WHERE id='.$this->id);
+		$this->Results = $this->QueryAsRow(
+											'SELECT posts.*,  users.firstName '.
+											'FROM posts '.
+											'LEFT JOIN users '.
+											'ON users.id = posts.user_id '.
+											'WHERE posts.id='.$this->id
+											);
 		
 		$this->isError = $this->Error();
 	}
