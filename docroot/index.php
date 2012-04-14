@@ -1,6 +1,7 @@
 <?PHP
 	include('../inc_design/inc_default_origin.php');
 	include_once('../inc_scripts/inc_scripts_class_profile_twitter.php');
+	include_once('../inc_scripts/inc_scripts_class_posts.php');
 	
 	include('../inc_design/inc_default_doctype.php'); 
 ?>
@@ -32,6 +33,7 @@
 			</div>
 			<div class="col">
 				<h3>Latest</h3>
+				<p><strong>Twitter</strong></p>
 				<?PHP
 				$twitter = new Twitter('rdhills');
 				$twitter->useCache = true;
@@ -45,7 +47,20 @@
 				}
 								
 				?>
-				<p>Last three blog posts</p>
+				
+				<p><strong>Posts</strong></p>
+				<?PHP
+				$posts = new Posts();
+				$posts->All(false,5);
+				
+				foreach($posts->Results as $post)
+				{
+					?>
+					<div class="post"><a href="<?PHP echo Posts::Url($post);?>" title=""><?PHP echo $post['title'];?></a> <?PHP echo $post['postDate'];?></div>
+					<?PHP
+				}
+				
+				?>
 			</div>
 			<div class="col">
 				<div class="infobox">
