@@ -2,9 +2,9 @@
 
 include_once('../inc_scripts/inc_scripts_class_profile_twitter.php');
 
-$twitter = new Twitter();
+$twitter = new Twitter('rdhills');
 $twitter->useCache = true;
-$profile = $twitter->profile('rdhills');
+$profile = $twitter->profile();
 
 $avatar = isset($profile['avatar']) && (trim($profile['avatar']) != "") ? $profile['avatar'] : "http://www.gravatar.com/avatar/".md5("robin.hills@gmail.com")."?s=48"; 
 	
