@@ -13,12 +13,17 @@ include_once(dirname(__FILE__).'/inc_scripts_class_profile.php');
 */
 class Twitter extends Profile
 {
-	function __construct()
+	private $username = false;
+	
+	function __construct($username = false)
 	{
 		parent::__construct();
+		
+		$this->setUsername($username);
+		
 	}
 	
-	function profile($username)
+	function profile()
 	{
 		$cache = false;
 		if($this->useCache === true)
@@ -27,7 +32,7 @@ class Twitter extends Profile
 		if(($cache === 0) || ($cache === false))
 		{
 			// Grab the users profile
-			$content = file_get_contents(TWITTER_API_BASE."/1/users/show.json?screen_name=".$username."&include_entities=true");
+			$content = file_get_contents(TWITTER_API_BASE."/1/users/show.json?screen_name=".$this->username."&include_entities=true");
 			
 			$json = json_decode($content,true);
 			
@@ -59,6 +64,68 @@ class Twitter extends Profile
 		}
 		
 		return $this->getProfile();
+	}
+	
+	function updates($count = 5)
+	{
+		// Validate count
+		$count = intval($count);
+		
+		$updates = array();
+		
+		// Verify that something was defined and that it is less than 200 (API limit)
+		if(($count != 0) && ($count <= 200))
+		{
+			$cache = false;
+			if($this->useCache === true)
+				$cache = $this->retrieve('twitter_timeline');
+			
+			if(($cache === 0) || ($cache === false))
+			{
+				// Grab the users timeline
+				$content = file_get_contents(TWITTER_API_BASE."/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=".$this->username."&count=".$count);
+					
+				$json = json_decode($content,true);
+				
+				if($json !== null)
+				{
+					foreach($json as $anUpdate)
+					{
+						$update = array(
+											'text' => $anUpdate['text'],
+											'id' => $anUpdate['id_str'],
+											'date' => strtotime($anUpdate['created_at'])
+										);
+						
+						// Make any links clickable
+						if($this->convertLinks)
+							$this->anchorLinks($update['text']);
+						
+						$updates[] = $update;
+						unset($update);
+					}
+				}
+				
+				if($cache === 0)
+					$this->cache('twitter_timeline',$updates);
+			}
+			else
+				$updates = $cache;
+		}
+		
+		return $updates;
+		
+	}
+	
+	function setUsername($username)
+	{
+		if($username !== false)
+			$this->username = $username;
+		
+		if(!is_string($this->username))
+			return false;
+		
+		return true;
 	}
 }
 ?>
