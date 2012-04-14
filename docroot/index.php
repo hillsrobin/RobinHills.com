@@ -1,5 +1,6 @@
 <?PHP
 	include('../inc_design/inc_default_origin.php');
+	include_once('../inc_scripts/inc_scripts_class_profile_twitter.php');
 	
 	include('../inc_design/inc_default_doctype.php'); 
 ?>
@@ -31,7 +32,19 @@
 			</div>
 			<div class="col">
 				<h3>Latest</h3>
-				<p>Twitter status updates</p>
+				<?PHP
+				$twitter = new Twitter('rdhills');
+				$twitter->useCache = true;
+				$updates = $twitter->updates();
+				
+				foreach($updates as $tweet)
+				{
+					?>
+					<div class="tweet"><?PHP echo $tweet['text'];?> <?PHP echo date('Y-m-d H:i',$tweet['date']);?></div>
+					<?PHP
+				}
+								
+				?>
 				<p>Last three blog posts</p>
 			</div>
 			<div class="col">
