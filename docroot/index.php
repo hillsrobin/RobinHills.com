@@ -27,13 +27,17 @@
 	<!-- Content -->
 	<div id="content">
 		<div class="container index">
-			<div class="col">
-				<div class="tagline">See what's inside <br />(insert fancy arrow here)</div>
+			<div class="col primary">
+				<div class="tagline">See what's inside <br /><span class="comment">&lt;!-- <br />insert fancy arrow here <br />--&gt;</span></div>
 				<div class="plug"><a href="http://github.com/diilbert/RobinHills.com/" title="Fork me on GitHub"><img src="images/logo_github_huge.png" alt="Fork me on GitHub" title="Fork me on GitHub"/></a></div>
 			</div>
-			<div class="col">
+			<div class="col latest">
 				<h3>Latest</h3>
-				<p><strong>Twitter</strong></p>
+				<div class="ahead">
+					<h4>I am mostly here</h4>
+					<div class="logo"><a href="http://twitter.com/#!/rdhills/" title="Follow me on Twitter"><img src="images/logo_twitter_huge.png" title="Follow me on Twitter" alt="Follow me on Twitter" /></a></div>
+					<div class="clear"></div>
+				</div>
 				<?PHP
 				$twitter = new Twitter('rdhills');
 				$twitter->useCache = true;
@@ -48,7 +52,7 @@
 								
 				?>
 				
-				<p><strong>Posts</strong></p>
+				<h4>... and sometimes I am here</h4>
 				<?PHP
 				$posts = new Posts();
 				$posts->All(false,5);
@@ -56,13 +60,13 @@
 				foreach($posts->Results as $post)
 				{
 					?>
-					<div class="post"><a href="<?PHP echo Posts::Url($post);?>" title=""><?PHP echo $post['title'];?></a> <?PHP echo $post['postDate'];?></div>
+					<div class="post"><a href="<?PHP echo Posts::Url($post);?>" title=""><?PHP echo $post['title'];?></a> <?PHP echo date('Y-m-d H:i',strtotime($post['postDate']));?></div>
 					<?PHP
 				}
 				
 				?>
 			</div>
-			<div class="col">
+			<div class="col info">
 				<div class="infobox">
 					<img src="http://www.gravatar.com/avatar/<?=md5("robin.hills@gmail.com");?>?s=96" alt="" title=""/>
 					<p>Bio</p>
@@ -97,11 +101,6 @@
 					<div>Oracle</div>
 					<div>CA Clarity PPM Studio</div>
 				</div>
-			</div>
-			
-			
-			<div class="col first">
-				&nbsp;
 			</div>
 			<div class="clear"></div>
 		</div>

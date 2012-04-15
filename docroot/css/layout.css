@@ -136,8 +136,31 @@ h2,h3{
 	width: 703px;
 	padding: 0px 10px;
 }
-#content .index .skills{
+#content .index .primary{
+	width: 205px;
+}
+#content .index .primary .tagline{
+	padding-bottom: 5px;
+}
+#content .index .ahead h4{
+	float: left;
+}
+#content .index .ahead .logo{
 	float: right;
+}
+#content .index .latest{
+	width: 415px;
+	padding-right: 10px;
+}
+#content .index .latest .ahead .logo{
+	margin-top: 5px;
+}
+#content .index .latest .tweet{
+	text-align: justify;
+	padding-bottom: 10px;
+}
+#content .index .skills{
+	width: 975px;
 }
 #content .index .right .archives div,
 #content .right .sections div,
