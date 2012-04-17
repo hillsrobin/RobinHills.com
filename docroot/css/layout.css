@@ -63,7 +63,11 @@ h2,h3{
 	width: 1000px;
 }
 #top{
-	height: 10px;
+	padding: 10px 0px;
+}
+#top div{
+	position: relative;
+	left: 60px;
 }
 .login_box .username,
 .login_box .password,
@@ -158,6 +162,7 @@ h2,h3{
 #content .index .latest .tweet{
 	text-align: justify;
 	padding-bottom: 10px;
+	text-justify: auto;
 }
 #content .index .skills{
 	width: 975px;

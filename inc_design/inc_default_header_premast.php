@@ -1,7 +1,6 @@
 		<div id="premast">
 			<div class="box">
 				<div class="left">
-				<div><a href="/" title="Home">robinhills.com</a><span> - my take on technology</span></div>
 				</div>
 				<div class="right">
 					<div class="menu_item"><a href="/">Home</a></div>

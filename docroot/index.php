@@ -20,7 +20,11 @@
 		<?PHP
 			include('../inc_design/inc_default_header_premast.php'); 
 		?>
-		<div id="top"></div>
+		<div id="top">
+			<div class="myname">Robin Hills</div> 
+			<div class="mytag">Deconstructing the web one zero at a time</div>
+		</div>
+		
 	</div>
 	<!-- END Header -->
 	
@@ -51,8 +55,11 @@
 				}
 								
 				?>
-				
-				<h4>... and sometimes I am here</h4>
+				<div class="ahead">
+					<h4>... and sometimes I am here</h4>
+					<div class="logo"><a href="/blog.php?feed" title="My feed"><img src="images/logo_rss_not_huge.gif" title="My feed" alt="My feed" /></a></div>
+					<div class="clear"></div>
+				</div>
 				<?PHP
 				$posts = new Posts();
 				$posts->All(false,5);
@@ -69,11 +76,10 @@
 			<div class="col info">
 				<div class="infobox">
 					<img src="http://www.gravatar.com/avatar/<?=md5("robin.hills@gmail.com");?>?s=96" alt="" title=""/>
-					<p>Bio</p>
+					<p>&lt;!-- Insert bio here --&gt;</p>
 				</div>
-			</div>
-			<div class="col skills">
-				<p>Do something creative here <strong>Usually is pretty dry</strong></p>
+			
+				&lt;!-- Intro to skills here --&gt;
 				<div class="skillbox">
 					<h3>Skills</h3>
 					<div>Web design</div>
