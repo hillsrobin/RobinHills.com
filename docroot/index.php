@@ -18,13 +18,8 @@
 	<!-- Header -->
 	<div id="header">
 		<?PHP
-			include('../inc_design/inc_default_header_premast.php'); 
+			include('../inc_design/inc_default_header.php'); 
 		?>
-		<div id="top">
-			<div class="myname">Robin Hills</div> 
-			<div class="mytag">Deconstructing the web one zero at a time</div>
-		</div>
-		
 	</div>
 	<!-- END Header -->
 	
@@ -32,8 +27,9 @@
 	<div id="content">
 		<div class="container index">
 			<div class="col primary">
-				<div class="tagline">See what's inside <br /><span class="comment">&lt;!-- <br />insert fancy arrow here <br />--&gt;</span></div>
+				<div class="tagline">See what's inside</div>
 				<div class="plug"><a href="http://github.com/diilbert/RobinHills.com/" title="Fork me on GitHub"><img src="images/logo_github_huge.png" alt="Fork me on GitHub" title="Fork me on GitHub"/></a></div>
+				<div class="forkme">Fork this website</div>
 			</div>
 			<div class="col latest">
 				<h3>Latest</h3>
@@ -50,7 +46,7 @@
 				foreach($updates as $tweet)
 				{
 					?>
-					<div class="tweet"><?PHP echo $tweet['text'];?> <?PHP echo date('Y-m-d H:i',$tweet['date']);?></div>
+					<div class="tweet"><?PHP echo $tweet['text'];?> | <?PHP echo date('M d, Y @ H:i T',$tweet['date']);?></div>
 					<?PHP
 				}
 								
@@ -67,7 +63,7 @@
 				foreach($posts->Results as $post)
 				{
 					?>
-					<div class="post"><a href="<?PHP echo Posts::Url($post);?>" title=""><?PHP echo $post['title'];?></a> <?PHP echo date('Y-m-d H:i',strtotime($post['postDate']));?></div>
+					<div class="post"><a href="<?PHP echo Posts::Url($post);?>" title=""><?PHP echo $post['title'];?></a> | <?PHP echo date('M d, Y @ H:i T',strtotime($post['postDate']));?></div>
 					<?PHP
 				}
 				
