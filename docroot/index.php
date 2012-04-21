@@ -30,6 +30,7 @@
 				<div class="tagline">See what's inside</div>
 				<div class="plug"><a href="http://github.com/diilbert/" title="Fork me on GitHub"><img src="images/logo_github_huge.png" alt="Fork me on GitHub" title="Fork me on GitHub"/></a></div>
 				<div class="forkme"><a href="http://github.com/diilbert/RobinHills.com/" title="RobinHills.com on GitHub">Fork this website</a></div>
+				<div class="connecttome"></div>
 			</div>
 			<div class="col latest">
 				<h3>Latest</h3>
