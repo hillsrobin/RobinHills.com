@@ -28,8 +28,8 @@
 		<div class="container index">
 			<div class="col primary">
 				<div class="tagline">See what's inside</div>
-				<div class="plug"><a href="http://github.com/diilbert/RobinHills.com/" title="Fork me on GitHub"><img src="images/logo_github_huge.png" alt="Fork me on GitHub" title="Fork me on GitHub"/></a></div>
-				<div class="forkme">Fork this website</div>
+				<div class="plug"><a href="http://github.com/diilbert/" title="Fork me on GitHub"><img src="images/logo_github_huge.png" alt="Fork me on GitHub" title="Fork me on GitHub"/></a></div>
+				<div class="forkme"><a href="http://github.com/diilbert/RobinHills.com/" title="RobinHills.com on GitHub">Fork this website</a></div>
 			</div>
 			<div class="col latest">
 				<h3>Latest</h3>
@@ -71,38 +71,46 @@
 			</div>
 			<div class="col info">
 				<div class="infobox">
-					<img src="http://www.gravatar.com/avatar/<?=md5("robin.hills@gmail.com");?>?s=96" alt="" title=""/>
-					<p>&lt;!-- Insert bio here --&gt;</p>
+					<div class="picture"><img src="http://www.gravatar.com/avatar/<?=md5("robin.hills@gmail.com");?>?s=96" alt="Profile Picture" title="Profile"/></div>
+					<div class="details">
+						<h3>About me</h3>
+						<div class="flagbox">
+							<p>You dream it.  I will make it real.</p>
+							<p>You design it.  I will style it.</p>
+							<p>You break it.  I will fix it.</p>
+						</div>
+						<div class="cloudbox">
+							<p>Some of the technologies I have experience with:</p>
+							<span data-weight="10">PHP 5</span>
+							<span data-weight="8">MySQL Server</span>
+							<span data-weight="2">MySQL Cluster</span>
+							<span data-weight="10">HTML</span>
+							<span data-weight="6">CSS</span>
+							<span data-weight="6">JavaScript</span>
+							<span data-weight="5">jQuery &amp; MooTools</span>
+							<span data-weight="7">Red Hat &amp; Debian/GNU Linux</span>
+							<span data-weight="6">C# Mono/.Net</span>
+							<span data-weight="4">Subversion</span>
+							<span data-weight="3">Apache Solr/Lucene</span>
+							<span data-weight="0.5">Oracle</span>
+							<span data-weight="0.5">CA Clarity PPM Studio</span>
+						</div>
+					</div>
+					<div class="clear"></div>
+					
+					<div class="skillbox">
+						<p>My current responsibilities include:</p>
+						<span data-weight="30">Web development and design</span>
+						<span data-weight="20">Solutions design</span>
+						<span data-weight="5">Infrastructure planning</span>
+						<span data-weight="25">Server administation</span>
+						<span data-weight="10">Database optimization</span>
+						<span data-weight="10">Performance tuning</span>
+					</div>
 				</div>
 			
-				&lt;!-- Intro to skills here --&gt;
-				<div class="skillbox">
-					<h3>Skills</h3>
-					<div>Web design</div>
-					<div>Web development</div>
-					<div>Agile development</div>
-					<div>Solution design</div>
-					<div>Infrastructure planning</div>
-					<div>Server administation</div>
-					<div>Database optimization</div>
-					<div>Performance tuning</div>
-				</div>
-				<div class="techbox">
-					<h3>Technologies</h3>
-					<div>PHP 5</div>
-					<div>MySQL Server</div>
-					<div>MySQL Cluster</div>
-					<div>XHTML</div>
-					<div>CSS</div>
-					<div>JavaScript</div>
-					<div>jQuery &amp; MooTools</div>
-					<div>Red Hat &amp; Debian/GNU Linux</div>
-					<div>C# Mono/.Net</div>
-					<div>Subversion</div>
-					<div>Apache Solr/Lucene</div>
-					<div>Oracle</div>
-					<div>CA Clarity PPM Studio</div>
-				</div>
+				
+			
 			</div>
 			<div class="clear"></div>
 		</div>

@@ -17,6 +17,9 @@ a{
 #top{
 	color: #000;
 }
+#content .index .infobox .cloudbox span:hover{
+	color: #000;
+}
 .login_box{
 	background-color: #f7cf0b;
 	border-color: #64412d;

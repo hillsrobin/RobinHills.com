@@ -167,6 +167,24 @@ h2,h3{
 	padding-bottom: 10px;
 	text-justify: auto;
 }
+#content .index .infobox p{
+	margin: 3px 0px;
+}
+
+#content .index .infobox .picture{
+	float: left;
+	padding: 0px 15px 7px 0px;
+}
+#content .index .infobox .flagbox{
+	position: relative;
+	top: 10px;
+}
+#content .index .infobox .cloudbox{
+	clear: both;
+}
+#content .index .infobox .skillbox{
+	padding-top: 15px;
+}
 #content .index .skills{
 	width: 975px;
 }
