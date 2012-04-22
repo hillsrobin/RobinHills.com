@@ -60,6 +60,12 @@ a:hover{
 	font-size: 16px;
 	font-weight: bold;
 }
+#content .index .latest .bookmark .tags{
+	font-size: 0.9em;
+}
+#content .index .latest .bookmark .tags span{
+	text-transform: uppercase;
+}
 #content .index .infobox .skillbox p,
 #content .index .infobox .cloudbox p{
 	font-weight: normal;

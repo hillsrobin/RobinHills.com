@@ -165,7 +165,12 @@ h2,h3{
 #content .index .latest .tweet{
 	text-align: justify;
 	padding-bottom: 10px;
-	text-justify: auto;
+}
+#content .index .latest .bookmark{
+	padding-bottom: 10px;
+}
+#content .index .latest .bookmark .tags{
+	padding-top: 3px;
 }
 #content .index .infobox p{
 	margin: 3px 0px;

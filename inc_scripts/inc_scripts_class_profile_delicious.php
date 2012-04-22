@@ -5,14 +5,16 @@
 */
 include_once(dirname(__FILE__).'/inc_scripts_class_profile.php');
 
-!defined('TWITTER_API_BASE') ? define('TWITTER_API_BASE','https://api.twitter.com') : null;
-!defined('TWITTER_STATUS_BASE') ? define('TWITTER_STATUS_BASE','https://twitter.com/#!/%s/status/%s') : null;
+!defined('DELICIOUS_API_BASE') ? define('DELICIOUS_API_BASE','http://feeds.delicious.com/v2/') : null;
+!defined('DELICIOUS_TAG_BASE') ? define('DELICIOUS_TAG_BASE','http://delicious.com/%s/%s') : null;
 
 /**
-* Twitter Profile class
+* Delicious Profile class
 */
-class Twitter extends Profile
+class Delicious extends Profile
 {
+	
+	
 	public function __construct($username = false)
 	{
 		parent::__construct();
@@ -23,7 +25,7 @@ class Twitter extends Profile
 	
 	public function profile()
 	{
-		
+		/*
 		parent::profile('twitter_profile');
 		
 		if($this->cache_data === false)
@@ -60,6 +62,7 @@ class Twitter extends Profile
 		}
 		
 		return $this->getProfile();
+		*/
 	}
 	
 	public function updates($count = 5)
@@ -74,12 +77,12 @@ class Twitter extends Profile
 		{
 			$cache = false;
 			if($this->useCache === true)
-				$cache = $this->retrieve('twitter_timeline');
+				$cache = $this->retrieve('delicious_updates');
 			
 			if(($cache === 0) || ($cache === false))
 			{
 				// Grab the users timeline
-				$content = file_get_contents(TWITTER_API_BASE."/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=".$this->username."&count=".$count);
+				$content = file_get_contents(DELICIOUS_API_BASE."/json/".$this->username."?count=".$count);
 					
 				$json = json_decode($content,true);
 				
@@ -87,15 +90,25 @@ class Twitter extends Profile
 				{
 					foreach($json as $anUpdate)
 					{
+						
+						$tags = '';
+						$tags_url = '';
+						if(count($anUpdate['t']) > 0)
+						{
+							$tags = implode(',',$anUpdate['t']);
+							foreach($anUpdate['t'] as $tag)
+								$tags_url .= '<a href="'.sprintf(DELICIOUS_TAG_BASE,$this->username,$tag).'" title="All '.$tag.' bookmarks">'.$tag.'</a>&nbsp;';
+						}
 						$update = array(
-											'text' => $anUpdate['text'],
-											'id' => $anUpdate['id_str'],
-											'date' => strtotime($anUpdate['created_at'])
+											'text' => $anUpdate['d'],
+											'url' => $anUpdate['u'],
+											'id' => 0,
+											'date' => strtotime($anUpdate['dt']),
+											'tags' => $tags,
+											'tags_url' => $tags_url
 										);
 						
-						// Make any links clickable
-						if($this->convertLinks)
-							$this->anchorLinks($update['text']);
+						
 						
 						$updates[] = $update;
 						unset($update);
@@ -103,7 +116,7 @@ class Twitter extends Profile
 				}
 				
 				if($cache === 0)
-					$this->cache('twitter_timeline',$updates);
+					$this->cache('delicious_updates',$updates);
 			}
 			else
 				$updates = $cache;

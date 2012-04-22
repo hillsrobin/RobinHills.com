@@ -1,6 +1,7 @@
 <?PHP
 	include('../inc_design/inc_default_origin.php');
 	include_once('../inc_scripts/inc_scripts_class_profile_twitter.php');
+	include_once('../inc_scripts/inc_scripts_class_profile_delicious.php');
 	include_once('../inc_scripts/inc_scripts_class_posts.php');
 	
 	include('../inc_design/inc_default_doctype.php'); 
@@ -31,6 +32,7 @@
 				<div class="plug"><a href="http://github.com/diilbert/" title="Fork me on GitHub"><img src="images/logo_github_huge.png" alt="Fork me on GitHub" title="Fork me on GitHub"/></a></div>
 				<div class="forkme"><a href="http://github.com/diilbert/RobinHills.com/" title="RobinHills.com on GitHub">Fork this website</a></div>
 				<div class="connecttome"></div>
+				
 			</div>
 			<div class="col latest">
 				<h3>Latest</h3>
@@ -69,6 +71,28 @@
 				}
 				
 				?>
+				<div class="ahead">
+					<h4>I bookmark important stuff here</h4>
+					<div class="logo"><a href="http://delicious.com/diilbert" title="My Bookmarks"><img src="images/logo_delicious.gif" title="My bookmarks" alt="My bookmarks" /></a></div>
+					<div class="clear"></div>
+				</div>
+				<?PHP
+				
+				$delicious = new Delicious('diilbert');
+				$delicious->useCache = true;
+				$updates = $delicious->updates();
+				
+				foreach($updates as $mark)
+				{
+					?>
+					<div class="bookmark">
+						<div><a href="<?PHP echo $mark['url'];?>" title="Added <?PHP echo date('M d, Y @ H:i T',$mark['date']);?>"><?PHP echo htmlspecialchars($mark['text']);?></a></div>
+						<div class="tags"><span>Tags</span> <?PHP echo $mark['tags_url'];?></div>
+					</div>
+					<?PHP
+				}
+				?>
+				
 			</div>
 			<div class="col info">
 				<div class="infobox">

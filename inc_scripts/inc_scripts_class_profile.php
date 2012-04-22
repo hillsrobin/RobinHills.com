@@ -11,6 +11,10 @@ class Profile
 {
 	protected $profile = array();
 	
+	protected $cache_data = false;
+	
+	protected $username = false;
+	
 	public $useCache = false;
 	
 	public $convertLinks = true;
@@ -26,6 +30,18 @@ class Profile
 			return $this->profile;
 		else
 			return false;
+	}
+	
+	protected function profile($cache_key = false)
+	{
+		if(($cache_key !== false)&&(PROFILE_CACHE_TTL > 0))
+		{
+			$this->cache_data = false;
+			if($this->useCache === true)
+				$this->cache_data = $this->retrieve($cache_key);
+			
+			$this->cache_data = $this->cache_data === 0 ? false : $this->cache_data;
+		}
 	}
 	
 	protected function cache($key,$value)
@@ -84,6 +100,17 @@ class Profile
 		$text = preg_replace( "/((http|ftp)+(s)?:\/\/[^<>\s]+)/i", "<a href=\"\\0\" >\\0</a>",$text);
 		
 		return $text;
+	}
+	
+	public function setUsername($username)
+	{
+		if($username !== false)
+			$this->username = $username;
+		
+		if(!is_string($this->username))
+			return false;
+		
+		return true;
 	}
 }
 
