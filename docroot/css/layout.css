@@ -146,6 +146,9 @@ h2,h3{
 #content .index .primary .tagline{
 	padding-bottom: 5px;
 }
+#content .index .primary .timestwo{
+	padding-top: 50px;
+}
 #content .index .primary .forkme{
 	padding-top: 7px;
 }

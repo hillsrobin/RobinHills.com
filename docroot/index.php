@@ -31,7 +31,10 @@
 				<div class="tagline">See what's inside</div>
 				<div class="plug"><a href="http://github.com/diilbert/" title="Fork me on GitHub"><img src="images/logo_github_huge.png" alt="Fork me on GitHub" title="Fork me on GitHub"/></a></div>
 				<div class="forkme"><a href="http://github.com/diilbert/RobinHills.com/" title="RobinHills.com on GitHub">Fork this website</a></div>
-				<div class="connecttome"></div>
+				
+				<div class="tagline timestwo">Connect with me</div>
+				<div class="plug"><a href="http://www.linkedin.com/pub/robin-hills/33/a32/ab5" title="Connect with me on LinkedIn"><img src="images/logo_linkedin.png" alt="Connect with me on LinkedIn" title="Connect with me on LinkedIn"/></a></div>
+				
 				
 			</div>
 			<div class="col latest">
