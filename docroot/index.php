@@ -48,6 +48,7 @@
 				$twitter = new Twitter('rdhills');
 				$twitter->useCache = true;
 				$updates = $twitter->updates();
+				$profile = $twitter->profile();
 				
 				foreach($updates as $tweet)
 				{
@@ -103,9 +104,12 @@
 					<div class="details">
 						<h3>About me</h3>
 						<div class="flagbox">
+						<!--
 							<p>You dream it.  I will make it real.</p>
 							<p>You design it.  I will style it.</p>
 							<p>You break it.  I will fix it.</p>
+						-->
+							<p><?PHP echo $profile['intro'];?></p>
 						</div>
 						<div class="cloudbox">
 							<p>Some of the technologies I have experience with:</p>
