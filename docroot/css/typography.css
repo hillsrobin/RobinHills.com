@@ -12,6 +12,7 @@ a{
 a:hover{
 	text-decoration: none;
 }
+/*
 #premast .box .left{
 	font-weight: bold;
 	font-size: 14px;
@@ -21,13 +22,14 @@ a:hover{
 	font-weight: normal;
 	font-size: 0.9em;
 }
+*/
 #premast .box .left a{
 	text-decoration: underline;
 }
 #premast .box .left a:hover{
 	text-decoration: none;
 }
-#premast .box .right .menu_item{
+#premast .box .menu_item{
 	font-weight: bold;
 }
 .login_box .login input,

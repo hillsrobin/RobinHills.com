@@ -1,11 +1,12 @@
 		<div id="premast">
 			<div class="box">
 				<div class="left">
-				</div>
-				<div class="right">
 					<div class="menu_item"><a href="/">Home</a></div>
 					<div class="menu_item"><a href="blog.php">Blog</a></div>
 					<div class="menu_item"><a href="contact.php">Contact</a></div>
+				</div>
+				<div class="right">
+					
 					<?PHP
 					if(is_numeric($_SESSION['User']))
 					{
