@@ -119,7 +119,7 @@ h2,h3{
 	padding: 0px 0px 10px 0px;
 }
 #content .right{
-	float: left;
+	float: right;
 	width: 255px;
 }
 #content .bin{
@@ -137,8 +137,8 @@ h2,h3{
 }
 #content .left{
 	float: left;
-	width: 703px;
-	padding: 0px 10px;
+	width: 693px;
+	padding-left: 10px;
 }
 #content .index .primary{
 	width: 205px;

@@ -27,7 +27,8 @@
 		<?PHP
 	}
 	?>
-	<h2>ROBIN HILLS</h2>
+	<h3>Contact details</h3>
+	
 	<div class="contact_label">Mailing Address:</div>
 	<div class="contact_detail">
 		<div>191 Indian Mountain Road</div>

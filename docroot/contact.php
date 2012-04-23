@@ -25,9 +25,10 @@
 	<div id="content">
 		<div class="container index">
 			<div class="right">
+				&nbsp;
 				<?PHP
-					include('../inc_design/inc_default_left_resume.php');
-					include('../inc_design/inc_default_left_portfolio.php');
+					// include('../inc_design/inc_default_left_resume.php');
+					// include('../inc_design/inc_default_left_portfolio.php');
 				?>
 				
 			</div>
