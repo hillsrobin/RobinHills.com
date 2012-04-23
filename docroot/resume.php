@@ -1,6 +1,8 @@
 <?PHP
 	include('../inc_design/inc_default_origin.php');
 	
+	Utils::Redirect("/");
+	
 	if(isset($_GET['download']))
 		include('../inc_scripts/inc_scripts_download_resume.php');
 	
