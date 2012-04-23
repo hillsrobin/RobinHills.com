@@ -33,14 +33,18 @@ class Posts extends SimpleMySQL
 		if($id !== false)
 			$this->id = $id;
 		
+		$filter = "";
+		if($this->user_id == -1)
+			$filter = ' AND status = "active"';
+		
 		$this->Results = $this->QueryAsRow(
 											'SELECT posts.*,  users.firstName '.
 											'FROM posts '.
 											'LEFT JOIN users '.
 											'ON users.id = posts.user_id '.
-											'WHERE posts.id='.$this->id
+											'WHERE posts.id='.$this->id.
+											$filter
 											);
-		
 		$this->isError = $this->Error();
 	}
 	

@@ -223,8 +223,10 @@
 				}
 				else	// View a single post
 				{
-					
-					include('../inc_design/inc_post_body.php');
+					if(!$posts->isError)
+						include('../inc_design/inc_post_body.php');
+					else
+						echo "Post not found";
 				}
 				?>
 			</div>
