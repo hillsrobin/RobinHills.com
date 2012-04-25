@@ -50,12 +50,18 @@
 				$updates = $twitter->updates();
 				$profile = $twitter->profile();
 				
-				foreach($updates as $tweet)
+				if($updates !== false)
 				{
-					?>
-					<div class="tweet"><?PHP echo $tweet['text'];?> | <?PHP echo date('M d, Y @ H:i T',$tweet['date']);?></div>
-					<?PHP
+					
+					foreach($updates as $tweet)
+					{
+						?>
+						<div class="tweet"><?PHP echo $tweet['text'];?> | <?PHP echo date('M d, Y @ H:i T',$tweet['date']);?></div>
+						<?PHP
+					}
 				}
+				else
+					echo "None found";
 								
 				?>
 				<div class="ahead">
@@ -86,15 +92,20 @@
 				$delicious->useCache = true;
 				$updates = $delicious->updates();
 				
-				foreach($updates as $mark)
+				if($updates !== false)
 				{
-					?>
-					<div class="bookmark">
-						<div><a href="<?PHP echo $mark['url'];?>" title="Added <?PHP echo date('M d, Y @ H:i T',$mark['date']);?>"><?PHP echo htmlspecialchars($mark['text']);?></a></div>
-						<div class="tags"><span>Tags</span> <?PHP echo $mark['tags_url'];?></div>
-					</div>
-					<?PHP
+					foreach($updates as $mark)
+					{
+						?>
+						<div class="bookmark">
+							<div><a href="<?PHP echo $mark['url'];?>" title="Added <?PHP echo date('M d, Y @ H:i T',$mark['date']);?>"><?PHP echo htmlspecialchars($mark['text']);?></a></div>
+							<div class="tags"><span>Tags</span> <?PHP echo $mark['tags_url'];?></div>
+						</div>
+						<?PHP
+					}
 				}
+				else
+					echo "None found";
 				?>
 				
 			</div>
@@ -109,7 +120,7 @@
 							<p>You design it.  I will style it.</p>
 							<p>You break it.  I will fix it.</p>
 						-->
-							<p><?PHP echo $profile['intro'];?></p>
+						<p><?PHP echo ($profile !== false ? $profile['intro'] : '');?></p>
 						</div>
 						<div class="cloudbox">
 							<p>Some of the technologies I have experience with:</p>

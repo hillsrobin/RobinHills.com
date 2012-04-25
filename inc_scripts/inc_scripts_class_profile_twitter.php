@@ -29,20 +29,25 @@ class Twitter extends Profile
 		if($this->cache_data === false)
 		{
 			// Grab the users profile
-			$content = file_get_contents(TWITTER_API_BASE."/1/users/show.json?screen_name=".$this->username."&include_entities=true");
+			$content = @file_get_contents(TWITTER_API_BASE."/1/users/show.json?screen_name=".$this->username."&include_entities=true");
 			
-			$json = json_decode($content,true);
-			
-			if($json !== null)
+			if($content !== false)
 			{
-				$this->profile['intro'] = $json['description'];
-				$this->profile['avatar'] = $json['profile_image_url'];
-				$this->profile['status']['text'] = $json['status']['text'];
-				$this->profile['status']['id'] = $json['status']['id_str'];
-				$this->profile['status']['date'] = strtotime($json['status']['created_at']);
+				$json = json_decode($content,true);
+				
+				if($json !== null)
+				{
+					$this->profile['intro'] = $json['description'];
+					$this->profile['avatar'] = $json['profile_image_url'];
+					$this->profile['status']['text'] = $json['status']['text'];
+					$this->profile['status']['id'] = $json['status']['id_str'];
+					$this->profile['status']['date'] = strtotime($json['status']['created_at']);
+				}
+			
+				$this->cache('twitter_profile',$this->profile);
 			}
-		
-			$this->cache('twitter_profile',$this->profile);
+			else
+				$this->profile = false; // Error condition
 			
 		}
 		else
@@ -79,31 +84,36 @@ class Twitter extends Profile
 			if(($cache === 0) || ($cache === false))
 			{
 				// Grab the users timeline
-				$content = file_get_contents(TWITTER_API_BASE."/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=".$this->username."&count=".$count);
+				$content = @file_get_contents(TWITTER_API_BASE."/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=".$this->username."&count=".$count);
 					
-				$json = json_decode($content,true);
-				
-				if($json !== null)
+				if($content !== false)
 				{
-					foreach($json as $anUpdate)
+					$json = json_decode($content,true);
+					
+					if($json !== null)
 					{
-						$update = array(
-											'text' => $anUpdate['text'],
-											'id' => $anUpdate['id_str'],
-											'date' => strtotime($anUpdate['created_at'])
-										);
-						
-						// Make any links clickable
-						if($this->convertLinks)
-							$this->anchorLinks($update['text']);
-						
-						$updates[] = $update;
-						unset($update);
+						foreach($json as $anUpdate)
+						{
+							$update = array(
+												'text' => $anUpdate['text'],
+												'id' => $anUpdate['id_str'],
+												'date' => strtotime($anUpdate['created_at'])
+											);
+							
+							// Make any links clickable
+							if($this->convertLinks)
+								$this->anchorLinks($update['text']);
+							
+							$updates[] = $update;
+							unset($update);
+						}
 					}
+					
+					if($cache === 0)
+						$this->cache('twitter_timeline',$updates);
 				}
-				
-				if($cache === 0)
-					$this->cache('twitter_timeline',$updates);
+				else
+					$updates = false;// Error state
 			}
 			else
 				$updates = $cache;

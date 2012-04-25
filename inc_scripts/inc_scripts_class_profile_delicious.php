@@ -82,41 +82,46 @@ class Delicious extends Profile
 			if(($cache === 0) || ($cache === false))
 			{
 				// Grab the users timeline
-				$content = file_get_contents(DELICIOUS_API_BASE."/json/".$this->username."?count=".$count);
-					
-				$json = json_decode($content,true);
+				$content = @file_get_contents(DELICIOUS_API_BASE."/json/".$this->username."?count=".$count);
 				
-				if($json !== null)
+				if($content !== false) // Ye be no error
 				{
-					foreach($json as $anUpdate)
+					
+					$json = json_decode($content,true);
+					
+					if($json !== null)
 					{
-						
-						$tags = '';
-						$tags_url = '';
-						if(count($anUpdate['t']) > 0)
+						foreach($json as $anUpdate)
 						{
-							$tags = implode(',',$anUpdate['t']);
-							foreach($anUpdate['t'] as $tag)
-								$tags_url .= '<a href="'.sprintf(DELICIOUS_TAG_BASE,$this->username,$tag).'" title="All '.$tag.' bookmarks">'.$tag.'</a>&nbsp;';
+							
+							$tags = '';
+							$tags_url = '';
+							if(count($anUpdate['t']) > 0)
+							{
+								$tags = implode(',',$anUpdate['t']);
+								foreach($anUpdate['t'] as $tag)
+									$tags_url .= '<a href="'.sprintf(DELICIOUS_TAG_BASE,$this->username,$tag).'" title="All '.$tag.' bookmarks">'.$tag.'</a>&nbsp;';
+							}
+							$update = array(
+												'text' => $anUpdate['d'],
+												'url' => $anUpdate['u'],
+												'id' => 0,
+												'date' => strtotime($anUpdate['dt']),
+												'tags' => $tags,
+												'tags_url' => $tags_url
+											);
+							
+							
+							
+							$updates[] = $update;
+							unset($update);
 						}
-						$update = array(
-											'text' => $anUpdate['d'],
-											'url' => $anUpdate['u'],
-											'id' => 0,
-											'date' => strtotime($anUpdate['dt']),
-											'tags' => $tags,
-											'tags_url' => $tags_url
-										);
-						
-						
-						
-						$updates[] = $update;
-						unset($update);
 					}
+					
+					if($cache === 0)
+						$this->cache('delicious_updates',$updates);
 				}
-				
-				if($cache === 0)
-					$this->cache('delicious_updates',$updates);
+					$updates = false;
 			}
 			else
 				$updates = $cache;
