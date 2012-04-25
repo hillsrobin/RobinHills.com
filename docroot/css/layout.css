@@ -63,11 +63,23 @@ h2,h3{
 	width: 1000px;
 }
 #top{
-	padding: 10px 0px;
+	height: 100px;
+	border-width: 0px 1px 0px 1px;
+	border-style: solid;
+	width: 998px;
+	overflow: hidden;
 }
-#top div{
+#top .box{
+	width: 300px;
+	height: 35px;
 	position: relative;
-	left: 60px;
+	top: 30px;
+	left: 35px;
+}
+#top .myname{
+	position: relative;
+	top: -9px;
+	left: 85px;
 }
 .login_box .username,
 .login_box .password,
@@ -119,8 +131,9 @@ h2,h3{
 	padding: 0px 0px 10px 0px;
 }
 #content .right{
-	float: right;
+	float: left;
 	width: 255px;
+	padding-right: 10px;
 }
 #content .bin{
 	float: left;
@@ -136,9 +149,9 @@ h2,h3{
 	padding-left: 0px;
 }
 #content .left{
-	float: left;
-	width: 693px;
-	padding-left: 10px;
+	float: right;
+	width: 703px;
+	padding-right: 5px;
 }
 #content .index .primary{
 	width: 205px;

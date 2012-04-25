@@ -38,11 +38,8 @@ a:hover{
 	font-size: 0.8em;
 	text-transform: uppercase;
 }
-#top .myname{
-	font-size: 3.0em;
-	text-shadow:1px 1px 3px #000;
-}
 #top div{
+	font-size: 3.0em;
 	font-weight: bold;
 }
 #content .tagline{

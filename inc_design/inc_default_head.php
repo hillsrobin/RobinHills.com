@@ -1,7 +1,6 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<meta http-equiv="Content-Script-Type" content="text/javascript" />
-	<meta http-equiv="X-UA-Compatible" content="IE=7" />
 	<meta name="Robots" content="index,follow" />
 	<meta name="country" content="Canada" />
 	<meta name="description" content="Robin Hills' personal slice of the web that is the home of his blog, resume and portfolio."/>

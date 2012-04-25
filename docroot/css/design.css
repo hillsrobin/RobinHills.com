@@ -1,12 +1,12 @@
 body{
-	background-color: #d76529;
+	background-color: #c69b66;
 	color: #666;
 }
 a{
 	color: #666;
 }
 #premast{
-	background-color: #c94326;
+	background-color: #A28053;
 	border-color: #64412d;
 	color: #ede1bb;
 }
@@ -15,7 +15,16 @@ a{
 	color: #ede1bb;
 }
 #top{
-	color: #000;
+	color: #ede1bb;
+	border-color: #64412d;
+	background: #fff url('../images/head_01.jpg');
+	cursor: pointer;
+}
+#top .box{
+	background-color: #64412d;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
+	opacity: 0.7;
+	
 }
 #content .index .infobox span:hover{
 	color: #000;

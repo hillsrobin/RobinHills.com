@@ -27,6 +27,10 @@ window.addEvent('domready',function(){
 		cloudInit(document.getElements(".cloudbox span"),"{exp} years");
 		cloudInit(document.getElements(".skillbox span"),"{exp}%");	
 		
+		document.getElement("#top").addEvent('click',function(){
+				window.location.href='/';
+		});
+		
 });
 
 function cloudInit(el,title)
