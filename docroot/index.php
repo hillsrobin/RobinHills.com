@@ -78,8 +78,17 @@
 				
 				foreach($posts->Results as $post)
 				{
+					// TODO: Replace this with an actual summary field (cleaner)
+					$body = strip_tags(str_replace(array("\r","\n","\t"),"",$post['body']));
+					
+					if(strlen($body) > 250)
+						$body = substr($body,0,250)."<a href=\"".Posts::Url($post)."\" title=\"Read more\">...</a>";
 					?>
-					<div class="post"><a href="<?PHP echo Posts::Url($post);?>" title=""><?PHP echo $post['title'];?></a> | <?PHP echo date('M d, Y @ H:i T',strtotime($post['postDate']));?></div>
+					<div class="post">
+						<div class="title"><a href="<?PHP echo Posts::Url($post);?>" title=""><?PHP echo $post['title'];?></a></div>
+						<div class="summary"><?PHP echo $body;?></div>
+						<div class="date"><?PHP echo date('M d, Y @ H:i T',strtotime($post['postDate']));?></div>
+					</div>
 					<?PHP
 				}
 				

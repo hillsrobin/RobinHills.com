@@ -182,6 +182,16 @@ h2,h3{
 	text-align: justify;
 	padding-bottom: 15px;
 }
+#content .index .latest .post{
+	padding-bottom: 10px;
+}
+#content .index .latest .post .title{
+	padding-bottom: 5px;
+}
+#content .index .latest .post .summary{
+	text-align: justify;
+}
+#content .index .latest .post .date,
 #content .index .latest .tweet .date{
 	text-align: right;
 }
