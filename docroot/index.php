@@ -99,7 +99,14 @@
 						?>
 						<div class="bookmark">
 							<div><a href="<?PHP echo $mark['url'];?>" title="Added <?PHP echo date('M d, Y @ H:i T',$mark['date']);?>"><?PHP echo htmlspecialchars($mark['text']);?></a></div>
-							<div class="tags"><span>Tags</span> <?PHP echo $mark['tags_url'];?></div>
+							<?PHP
+							if($mark['tags_url'] != "")
+							{
+								?>
+								<div class="tags"><span>Tags</span> <?PHP echo $mark['tags_url'];?></div>
+								<?PHP
+							}
+							?>
 						</div>
 						<?PHP
 					}

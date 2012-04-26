@@ -96,7 +96,7 @@ class Delicious extends Profile
 							
 							$tags = '';
 							$tags_url = '';
-							if(count($anUpdate['t']) > 0)
+							if(is_array($anUpdate['t']) && count($anUpdate['t']) > 0)
 							{
 								$tags = implode(',',$anUpdate['t']);
 								foreach($anUpdate['t'] as $tag)
@@ -121,6 +121,7 @@ class Delicious extends Profile
 					if($cache === 0)
 						$this->cache('delicious_updates',$updates);
 				}
+				else
 					$updates = false;
 			}
 			else
