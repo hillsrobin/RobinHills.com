@@ -56,7 +56,10 @@
 					foreach($updates as $tweet)
 					{
 						?>
-						<div class="tweet"><?PHP echo $tweet['text'];?> | <?PHP echo date('M d, Y @ H:i T',$tweet['date']);?></div>
+						<div class="tweet">
+							<div class="text"><?PHP echo $tweet['text'];?></div>
+							<div class="date"><?PHP echo date('M d, Y @ H:i T',$tweet['date']);?></div>
+						</div>
 						<?PHP
 					}
 				}

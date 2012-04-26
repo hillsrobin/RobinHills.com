@@ -180,7 +180,10 @@ h2,h3{
 }
 #content .index .latest .tweet{
 	text-align: justify;
-	padding-bottom: 10px;
+	padding-bottom: 15px;
+}
+#content .index .latest .tweet .date{
+	text-align: right;
 }
 #content .index .latest .bookmark{
 	padding-bottom: 10px;
