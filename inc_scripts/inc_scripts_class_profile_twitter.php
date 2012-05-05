@@ -57,12 +57,8 @@ class Twitter extends Profile
 		if($this->convertLinks)
 			$this->anchorLinks($this->profile['status']['text']);
 		
-		// Link the ... in truncated tweets to the status update
-		if(preg_match("/\.\.\.$/",$this->profile['status']['text']) > 0)
-		{
-			$read_more_url = sprintf(TWITTER_STATUS_BASE,$username,$this->profile['status']['id']);
-			$this->profile['status']['text'] = preg_replace("/\.\.\.$/","<a href=\"".$read_more_url."\" title=\"\">...</a>",$this->profile['status']['text']);
-		}
+		$this->truncatedStatus($this->profile['status']['id'], $this->profile['status']['text']);
+		
 		
 		return $this->getProfile();
 	}
@@ -104,6 +100,8 @@ class Twitter extends Profile
 							if($this->convertLinks)
 								$this->anchorLinks($update['text']);
 							
+							$this->truncatedStatus($update['id'], $update['text']);
+							
 							$updates[] = $update;
 							unset($update);
 						}
@@ -121,6 +119,16 @@ class Twitter extends Profile
 		
 		return $updates;
 		
+	}
+	
+	// Link the ... in truncated tweets to the status update
+	private function truncatedStatus($id, &$text)
+	{
+		if(preg_match("/\.\.\.$/",$text) > 0)
+		{
+			$read_more_url = sprintf(TWITTER_STATUS_BASE,$this->username,$id);
+			$text = preg_replace("/\.\.\.$/","<a href=\"".$read_more_url."\" title=\"\">...</a>",$text);
+		}
 	}
 }
 ?>
