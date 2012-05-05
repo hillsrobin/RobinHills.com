@@ -1,6 +1,5 @@
 <?PHP
 	include('../inc_design/inc_default_origin.php');
-//	include('../inc_scripts/inc_scripts_common_verify_locked.php');
 	include('../inc_scripts/inc_scripts_class_posts.php');
 
 	if((!isset($_GET['action'])) || (trim($_GET['action']) == ""))
@@ -62,6 +61,7 @@
 				<?PHP	
 				if($_GET['action'] != "view")	// Post administration
 				{
+					include('../inc_scripts/inc_scripts_common_verify_locked.php');
 					?>
 				<div class="post_admin">
 					<form id="post" action="function.php?action=post_<?PHP echo $_GET['action'];?><?PHP echo $_GET['action'] == 'edit' ? '&id='.$_GET['id'] : '';?>" method="post" enctype="multipart/form-data">
