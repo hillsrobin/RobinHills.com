@@ -224,7 +224,7 @@ h2,h3{
 	padding-bottom: 5px;
 }
 #content .index .skills{
-	width: 975px;
+	width: 975px; 
 }
 #content .index .right .archives div,
 #content .right .sections div,
@@ -312,7 +312,8 @@ h2,h3{
 	padding: 3px;
 	overflow-y: auto;
 }
-#content .post_admin .element .field input,
+#content .post_admin .title .field input,
+#content .post_admin .categories .field input,
 #content .post_admin .element .field select{
 	width: 500px;
 	padding: 3px;
@@ -331,12 +332,6 @@ h2,h3{
 }
 #content .post_admin .submit{
 	padding: 5px 0px 0px 0px;
-}
-#content .post_admin .submit .field input{
-	width: auto;
-	border-style: solid;
-	border-width: 1px;
-	padding: 0px;
 }
 #content .post_admin .available_categories .acategory{
 	float: left;
@@ -586,13 +581,6 @@ h2,h3{
 .login .field{
 	float: left;
 }
-.contact_body .contact_me input,
-.contact_body .contact_detail textarea,
-.contact_body .contact_detail input,
-.login .field input{
-	padding: 3px;
-	border: 1px solid;
-}
 .login .label{
 	width: 80px;
 	line-height: 16px;
@@ -604,11 +592,6 @@ h2,h3{
 }
 .login .login_button{
 	text-align: center;
-}
-.login .login_button input{
-	width: auto;
-	border-width: 1px;
-	border-style: solid;
 }
 .login .failed{
 	text-align: center;

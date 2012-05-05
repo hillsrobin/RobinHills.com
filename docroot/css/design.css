@@ -33,12 +33,6 @@ a{
 	background-color: #f7cf0b;
 	border-color: #64412d;
 }
-.login_box .login input,
-#content .post_admin .submit .field input{
-	border-color: #64412d;
-	background-color: #d76529;
-	color: #ede1bb;
-}
 #footer a:hover{
 	color: #cfd6b4;
 }
@@ -53,12 +47,6 @@ a{
 }
 
 /* Login Page */
-.contact_body .contact_me input,
-.login .login_button input{
-	border-color: #64412D;
-	background-color: #D76529;
-	color: #EDE1BB;
-}
 .login .failed{
 	color: #c00;
 }
