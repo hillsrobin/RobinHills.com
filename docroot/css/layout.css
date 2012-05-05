@@ -216,8 +216,12 @@ h2,h3{
 #content .index .infobox .cloudbox{
 	clear: both;
 }
+#content .index .infobox .projectbox,
 #content .index .infobox .skillbox{
 	padding-top: 15px;
+}
+#content .index .infobox .projectbox div{
+	padding-bottom: 5px;
 }
 #content .index .skills{
 	width: 975px;

@@ -134,12 +134,7 @@
 					<div class="details">
 						<h3>About me</h3>
 						<div class="flagbox">
-						<!--
-							<p>You dream it.  I will make it real.</p>
-							<p>You design it.  I will style it.</p>
-							<p>You break it.  I will fix it.</p>
-						-->
-						<p><?PHP echo ($profile !== false ? $profile['intro'] : '');?></p>
+							<p><?PHP echo ($profile !== false ? $profile['intro'] : '');?></p>
 						</div>
 						<div class="cloudbox">
 							<p>Some of the technologies I have experience with:</p>
@@ -168,6 +163,18 @@
 						<span data-weight="25">Server administation</span>
 						<span data-weight="10">Database optimization</span>
 						<span data-weight="10">Performance tuning</span>
+					</div>
+					
+					<div class="projectbox">
+						<div>The projects I am currently working on:</div>
+						<p><strong><a href="#" title="Visit www.robinhills.com">RobinHills.com</a></strong></p>
+						<div>This website</div>
+						<p><strong><a href="http://www.careerbeacon.com" title="Visit www.careerbeacon.com">CareerBeacon</a></strong></p>
+						<div>Full service Atlantic Canadian focused Career website</div>
+						<p><strong><a href="http://www.jobsinnl.ca" title="Visit www.jobsinnl.ca">JOBSinNL.ca</a></strong></p>
+						<div>Newfoundland and Labrador's comprehensive job search and posting website.</div>
+						<p><strong>Undisclosed</strong></p>
+						<div>A new career focused website built on CareerBeacon.  To be release towards the end of 2012.</div>
 					</div>
 				</div>
 			
