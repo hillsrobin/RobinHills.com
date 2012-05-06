@@ -24,8 +24,8 @@
 	</div>
 	<!-- END Header -->
 	<script type="text/javascript">
-		window.addEvent('load',function(){
-				$('username').focus();
+		jQuery(document).ready(function(){
+				$('#username').focus();
 		});
 	</script>
 	<!-- Content -->

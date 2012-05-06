@@ -15,6 +15,6 @@
 	<link href="css/ie.css" rel="stylesheet" media="all" type="text/css"/>
 	<![endif]-->
 
-	<script type="text/javascript" src="javascript/mootools-core-1.4.5-full-compat.js"></script>
+	<script type="text/javascript" src="javascript/jquery-1.7.2.js"></script>
 	<script type="text/javascript" src="javascript/inc_scripts_common.js"></script>
 	

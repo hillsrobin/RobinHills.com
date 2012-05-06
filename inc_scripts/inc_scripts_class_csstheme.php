@@ -106,19 +106,21 @@ class CSSTheme
 	
 	public function getJavascript()
 	{
-		return "<script type=\"text/javascript\">
-				window.addEvent('domready',function(){
-					var anchors = document.getElements('a[rel=csstheme]');
+		return "<script type=\"text/javascript\" src=\"javascript/jquery.cookie.js\"></script>
+				<script type=\"text/javascript\">
+				jQuery(document).ready(function(){
+					var anchors = $('a[rel=csstheme]');
 					
-					anchors.each(function(item,index){
-						var theme = item.getProperty('name');
+					anchors.each(function(index,item){
+						item = $(item);
+						var theme = item.attr('name');
 						
-						item.addEvent('click',function(){
-							Cookie.write('".$this->CookieName."',theme, {duration: 365, path: '/', domain: '".COOKIE_DOMAIN."'});
+						item.click(function(){
+							$.cookie('".$this->CookieName."',theme, {duration: 365, path: '/', domain: '".COOKIE_DOMAIN."'});
 							window.location.href = window.location.href;
 						});
 						
-						item.setProperty('title','Switch to '+item.get('html'));
+						item.attr('title','Switch to '+item.html());
 						
 					});
 				});

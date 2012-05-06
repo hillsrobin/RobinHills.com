@@ -7,10 +7,6 @@ $message = $_POST['your_message'];
 
 $bValid = true;
 
-/*
-if(preg_match("//",$email) ==  0)
-	$bValid = false;
-*/	
 
 if(preg_match("/[^a-z,A-Z, ,\-,\']+/",$name) > 0)
 	$bValid = false;

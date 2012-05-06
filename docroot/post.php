@@ -83,10 +83,10 @@
 								{
 									?>
 									<script type="text/javascript">
-									window.addEvent('domready',function(){
-										document.getElement('.image a').addEvent('click',function(){
-											document.getElement('.image .field div').destroy();
-											document.getElement('.image .field').set('html','<input type="file" name="image" id="image" value=""/>');
+									jQuery(document).ready(function(){
+										$('.image a').click(function(){
+											$('.image .field div').remove();
+											$('.image .field').html('<input type="file" name="image" id="image" value=""/>');
 										});
 									});
 									</script>
@@ -119,48 +119,52 @@
 							<div class="label"></div>
 							<div class="field">
 								<script type="text/javascript">
-								window.addEvent('domready',function(){
-									var categories = document.getElements('.available_categories .acategory a');
+								jQuery(document).ready(function(){
+									var categories = $('.available_categories .acategory a');
 									
-									categories.each(function(item,index){
-										item.addEvent('click',function(){
+									categories.each(function(index,item){
+										item = $(item);
+											
+										item.click(function(){
+												
+											var block = $('#categories'); 
 												
 											// Check if the category already exists
-											if(item.retrieve('selected').toInt() == 1)
+											if(item.data('selected') == 1)
 											{
-												$('categories').value = $('categories').value.replace(item.get('html'),"");
+												block.val(block.val().replace($(item).html(),""));
 												
 												//Clean up stray commas
-												$('categories').value = $('categories').value.replace(/\,$/g,"");
-												$('categories').value = $('categories').value.replace(/^\,/g,"");
-												$('categories').value = $('categories').value.replace(/\,{2,20}/g,",");
+												block.val(block.val().replace(/\,$/g,""));
+												block.val(block.val().replace(/^\,/g,""));
+												block.val(block.val().replace(/\,{2,20}/g,","));
 											
-												item.setStyle('text-decoration','none');
+												item.css('text-decoration','none');
 												
-												item.store('selected',0);
+												item.data('selected',0);
 											}
 											else
 											{
-												if($('categories').value != '')
-													$('categories').value += ',';
+												if(block.val() != '')
+													block.val(block.val()+',');
 												
-												$('categories').value += item.get('html');
+												block.val( block.val() + item.html());
 												
-												item.setStyle('text-decoration','underline');
+												item.css('text-decoration','underline');
 												
-												item.store('selected',1);
+												item.data('selected',1);
 											}
 										});
 											
-										item.removeProperty('href');
-										item.setStyle('cursor','pointer');
+										item.removeAttr('href');
+										item.css('cursor','pointer');
 										
-										if($('categories').value.search(item.get("html")) == -1)
-											item.store('selected',0);
+										if($('#categories').val().search(item.html()) == -1)
+											item.data('selected',0);
 										else
 										{
-											item.store('selected',1);
-											item.setStyle('text-decoration','underline');
+											item.data('selected',1);
+											item.css('text-decoration','underline');
 										}
 											
 																				
@@ -201,15 +205,11 @@
 							<div class="clear"></div>
 						</div>
 						<script type="text/javascript">
-							window.addEvent('domready',function(){
+							jQuery(document).ready(function(){
 									
-									$('postDate_now').addEvent('change',function(){
-											$('postDate').readOnly = $('postDate_now').checked;
+									$('#postDate_now').change(function(){
+											$('#postDate').attr('readonly',$('#postDate_now').prop('checked'));
 									});
-
-									
-									
-									
 							});
 						</script>
 						<div class="element submit">

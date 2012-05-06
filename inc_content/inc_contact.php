@@ -1,17 +1,26 @@
-<script type="text/javascript" src="javascript/inc_scripts_common_validation.js"></script>
 <script type="text/javascript">
-
-	var contact_validate = validate_form;
 		
-	window.addEvent('domready',function(){
-		$('contact_form').setProperty('action','function.php?action=contact');
-		contact_validate.add_field({id:'your_name', type: 'blank'});
-		contact_validate.add_field({id:'your_email', type: ['blank','email']});
-		contact_validate.add_field({id:'your_message', type: 'blank'});
-
-		document.getElement('.contact_me input[type=button]').addEvent('click',function(){
-			if(contact_validate.form())
-				$('contact_form').submit();
+	jQuery(document).ready(function(){
+		$('#contact_form').attr('action','function.php?action=contact');
+		
+		$('#contact_form input[type=button]').click(function(){
+				var isError = false;
+				//Do some simple client validation
+				$('[data-validate="blank"]').each(function(index,item){
+					item = jQuery(item);
+					
+					var str = item.val().replace(/ /i,"");
+					if(str == "")
+					{
+						jQuery("#"+item.attr('id')+"_error").css('color',"#C00");
+						isError = true;
+					}
+					else
+						jQuery("#"+item.attr('id')+"_error").css('color',"#666");
+				});
+				
+				if(!isError)
+					jQuery("#contact_form").submit();
 		});
 		
 	});
@@ -66,18 +75,18 @@
 	<div class="contact_body">
 		<h3>Contact me directly</h3>
 		<div class="contact_label">Your name:</div>
-		<div class="contact_detail"><input type="text" name="your_name" id="your_name"/></div>
+		<div class="contact_detail"><input type="text" name="your_name" id="your_name" data-validate="blank"/></div>
 		<div class="clear"></div>
 		<div class="required_field" id="your_name_error">Required Field</div>
 		
 		<div class="contact_label">Email address:</div>
-		<div class="contact_detail"><input type="text" name="your_email" id="your_email"/></div>
+		<div class="contact_detail"><input type="text" name="your_email" id="your_email" data-validate="blank"/></div>
 		<div class="clear"></div>
 		<div class="required_field" id="your_email_error">Required Field</div>
 		
 		<div class="contact_label">Your message:</div>
 		<div class="contact_detail">
-			<textarea cols="" rows="" name="your_message" id="your_message"></textarea>
+			<textarea cols="" rows="" name="your_message" id="your_message" data-validate="blank"></textarea>
 		</div>
 		<div class="clear"></div>
 		<div class="required_field" id="your_message_error">Required Field</div>
