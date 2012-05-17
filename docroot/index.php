@@ -169,12 +169,15 @@
 						<div>The projects I am currently working on:</div>
 						<p><strong><a href="#" title="Visit www.robinhills.com">RobinHills.com</a></strong></p>
 						<div>This website</div>
+						
 						<p><strong><a href="http://www.careerbeacon.com" title="Visit www.careerbeacon.com">CareerBeacon</a></strong></p>
 						<div>Full service Atlantic Canadian focused Career website</div>
 						<p><strong><a href="http://www.jobsinnl.ca" title="Visit www.jobsinnl.ca">JOBSinNL.ca</a></strong></p>
 						<div>Newfoundland and Labrador's comprehensive job search and posting website.</div>
 						<p><strong>Undisclosed</strong></p>
 						<div>A new career focused website built on CareerBeacon.  To be release towards the end of 2012.</div>
+						<p><strong><a href="https://github.com/diilbert/swisstop" title="Visit the SwissTop GitHub repo">SwissTop</a></strong></p>
+						<div>A Swiss Army knife desktop utility to bind your keyword to any task</div>
 					</div>
 				</div>
 			
