@@ -177,7 +177,7 @@
 						<p><strong>Undisclosed</strong></p>
 						<div>A new career focused website built on CareerBeacon.  To be release towards the end of 2012.</div>
 						<p><strong><a href="https://github.com/diilbert/swisstop" title="Visit the SwissTop GitHub repo">SwissTop</a></strong></p>
-						<div>A Swiss Army knife desktop utility to bind your keyword to any task</div>
+						<div>A Swiss Army knife desktop utility to bind your keyboard to any task</div>
 					</div>
 				</div>
 			
