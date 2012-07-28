@@ -50,5 +50,6 @@
 	if(trim($title_tag) != "")
 		$title = ' - '.$title_tag;
 	
+	
 ?>
-<title>robinhills.com<?PHP echo $title;?></title>
+<title><?PHP echo HOST_TITLE.$title;?></title>

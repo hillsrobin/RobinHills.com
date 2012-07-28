@@ -19,12 +19,16 @@ switch($_SERVER['HTTP_HOST'])
 	case 'daddy.robinhills.com':
 	case 'daddydev.robinhills.com':
 		define('HOST_ID',HOST_DADDY);
+		define('HOST_THEME','daddy');
+		define('HOST_TITLE','Daddy&#39;s Notes');
 		break;
 		
 	case 'devblog.robinhills.com':
 	case 'www.robinhills.com':
 	default:
 		define('HOST_ID',HOST_WWW);
+		define('HOST_THEME','default');
+		define('HOST_TITLE','robinhills.com');
 		break;
 }
 

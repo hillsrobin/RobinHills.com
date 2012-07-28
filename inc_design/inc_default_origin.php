@@ -16,6 +16,10 @@
 	if(is_array($db_profile))
 		$db = new SimpleMySQL($db_profile);
 	
+	$theme = new CSSTheme();
+	$theme->ThemePath = ROOT_PATH."docroot/css/theme/";
+	$theme->setName(HOST_THEME);
+	
 	include_once('../inc_scripts/inc_scripts_common_verify_logged.php');
 	
 ?>

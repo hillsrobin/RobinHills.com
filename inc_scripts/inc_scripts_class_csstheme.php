@@ -6,8 +6,7 @@ class CSSTheme
 	public $UseCookie = false;
 	public $CookieName = 'theme';
 	public $ThemePath = '';
-	
-	
+		
 	public function __construct($themeName = false)
 	{
 		if($themeName !== false)
@@ -102,6 +101,21 @@ class CSSTheme
 	{
 		if(($this->useCookie) && ($this->__valid()))
 			setcookie($this->CookieName,$this->getName(), time() + 315360000 /*10 years*/ , "/",COOKIE_DOMAIN);
+	}
+	
+	public function getInclude()
+	{
+		if($this->__valid())
+		{
+			// Normalize the paths
+			$docroot = str_replace("\\","/",$_SERVER['DOCUMENT_ROOT']);
+			$theme_path = str_replace("\\","/",$this->ThemePath);
+			
+			// Subtract the document root path from the theme (full) path
+			$theme_path = str_replace($docroot,"",$theme_path);
+			
+			return PHP_EOL."<link href=\"".$theme_path.$this->getName().".css\" rel=\"stylesheet\" media=\"all\" type=\"text/css\"/>".PHP_EOL;
+		}
 	}
 	
 	public function getJavascript()
