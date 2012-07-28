@@ -62,3 +62,6 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `firstName`, `lastName`) VALUES
 (1, 'admin', md5('supersecret'), 'Admin', 'User');
+
+-- Add host_id to posts table (for multi-site support)
+ALTER TABLE posts ADD host_id SMALLINT default 1 AFTER id, ADD INDEX (host_id);

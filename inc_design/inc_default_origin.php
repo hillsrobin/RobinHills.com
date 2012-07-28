@@ -1,5 +1,6 @@
 <?PHP
-
+	
+	include_once('../inc_scripts/inc_scripts_config_constants.php');
 	include_once('../inc_scripts/inc_scripts_config.php');
 	
 	if(MODE_DEV)
