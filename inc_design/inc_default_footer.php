@@ -5,7 +5,8 @@
 		<div class="right">&copy; 2009-<?PHP echo date('Y');?> robinhills.com. All Rights Reserved.</div>
 		<div class="clear"></div>
 		<?PHP
-		if(!MODE_DEV)
+		//Filter out uptime monitor traffic
+		if((!MODE_DEV)&&(preg_match("/Neustar WPM/",$_SERVER['HTTP_USER_AGENT']) == 0))
 		{
 			// Analytics Code
 			?>
