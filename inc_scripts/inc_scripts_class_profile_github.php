@@ -1,0 +1,125 @@
+<?PHP
+
+/**
+* Base include
+*/
+include_once(dirname(__FILE__).'/inc_scripts_class_profile.php');
+
+!defined('GITHUB_BASE') ? define('GITHUB_BASE','https://github.com/') : null;
+
+/**
+* GitHub Profile class
+*/
+class GitHub extends Profile
+{
+	public function __construct($username = false)
+	{
+		parent::__construct();
+		
+		$this->setUsername($username);
+		
+	}
+	
+	public function profile()
+	{
+		
+		parent::profile('github_profile');
+		
+		if($this->cache_data === false)
+		{
+			// Grab the users profile
+			$content = @file_get_contents(GITHUB_BASE."/".$this->username.".atom");
+			
+			if($content !== false)
+			{
+				if($json !== null)
+				{
+					$this->profile['intro'] = $json['description'];
+					$this->profile['avatar'] = $json['profile_image_url'];
+				}
+			
+				$this->cache('github_profile',$this->profile);
+			}
+			else
+				$this->profile = false; // Error condition
+			
+		}
+		else
+			$this->profile = $cache;
+		
+		// Make any links clickable
+		if($this->convertLinks)
+			$this->anchorLinks($this->profile['status']['text']);
+		
+		return $this->getProfile();
+	}
+	
+	public function updates($count = 5)
+	{
+		// Validate count
+		$count = intval($count);
+		
+		$updates = array();
+		
+		// Verify that something was defined and that it is less than 200 (API limit)
+		if(($count != 0) && ($count <= 200))
+		{
+			$cache = false;
+			if($this->useCache === true)
+				$cache = $this->retrieve('twitter_timeline');
+			
+			if(($cache === 0) || ($cache === false))
+			{
+				// Grab the users timeline
+				$content = @file_get_contents(TWITTER_API_BASE."/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=".$this->username."&count=".$count);
+					
+				if($content !== false)
+				{
+					$json = json_decode($content,true);
+					
+					if($json !== null)
+					{
+						foreach($json as $anUpdate)
+						{
+							$update = array(
+												'text' => $anUpdate['text'],
+												'id' => $anUpdate['id_str'],
+												'date' => strtotime($anUpdate['created_at'])
+											);
+							
+							// Make any links clickable
+							if($this->convertLinks)
+								$this->anchorLinks($update['text']);
+							
+							$this->truncatedStatus($update['id'], $update['text']);
+							
+							$updates[] = $update;
+							unset($update);
+						}
+					}
+					
+					if($cache === 0)
+						$this->cache('twitter_timeline',$updates);
+				}
+				else
+					$updates = false;// Error state
+			}
+			else
+				$updates = $cache;
+		}
+		
+		return $updates;
+		
+	}
+	
+	// Link the ... in truncated tweets to the status update
+	private function truncatedStatus($id, &$text)
+	{
+		if(preg_match("/\.\.\.$/",$text) > 0)
+		{
+			$read_more_url = sprintf(TWITTER_STATUS_BASE,$this->username,$id);
+			$text = preg_replace("/\.\.\.$/","<a href=\"".$read_more_url."\" title=\"\">...</a>",$text);
+		}
+	}
+}
+?>
