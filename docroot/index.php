@@ -174,8 +174,8 @@
 						<div>Full service Atlantic Canadian focused Career website</div>
 						<p><strong><a href="http://www.jobsinnl.ca" title="Visit www.jobsinnl.ca">JOBSinNL.ca</a></strong></p>
 						<div>Newfoundland and Labrador's comprehensive job search and posting website.</div>
-						<p><strong>Undisclosed</strong></p>
-						<div>A new career focused website built on CareerBeacon.  To be release towards the end of 2012.</div>
+						<p><strong><a href="https://www.jobgo.ca" title="Visit www.jobgo.ca">JobGO.ca</a></strong></p>
+						<div>A French language job website targeting the Queb&#233;c market.</div>
 						<p><strong><a href="https://github.com/diilbert/swisstop" title="Visit the SwissTop GitHub repo">SwissTop</a></strong></p>
 						<div>A Swiss Army knife desktop utility to bind your keyboard to any task</div>
 					</div>
