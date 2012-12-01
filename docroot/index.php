@@ -29,8 +29,8 @@
 		<div class="container index">
 			<div class="col primary">
 				<div class="tagline">See what's inside</div>
-				<div class="plug"><a href="http://github.com/diilbert/" title="Fork me on GitHub"><img src="images/logo_github_huge.png" alt="Fork me on GitHub" title="Fork me on GitHub"/></a></div>
-				<div class="forkme"><a href="http://github.com/diilbert/RobinHills.com/" title="RobinHills.com on GitHub">Fork this website</a></div>
+				<div class="plug"><a href="http://github.com/hillsrobin/" title="Fork me on GitHub"><img src="images/logo_github_huge.png" alt="Fork me on GitHub" title="Fork me on GitHub"/></a></div>
+				<div class="forkme"><a href="http://github.com/hillsrobin/RobinHills.com/" title="RobinHills.com on GitHub">Fork this website</a></div>
 				
 				<div class="tagline timestwo">Connect with me</div>
 				<div class="plug"><a href="http://www.linkedin.com/pub/robin-hills/33/a32/ab5" title="Connect with me on LinkedIn"><img src="images/logo_linkedin.png" alt="Connect with me on LinkedIn" title="Connect with me on LinkedIn"/></a></div>
@@ -176,7 +176,7 @@
 						<div>Newfoundland and Labrador's comprehensive job search and posting website.</div>
 						<p><strong><a href="https://www.jobgo.ca" title="Visit www.jobgo.ca">JobGO.ca</a></strong></p>
 						<div>A French language job website targeting the Queb&#233;c market.</div>
-						<p><strong><a href="https://github.com/diilbert/swisstop" title="Visit the SwissTop GitHub repo">SwissTop</a></strong></p>
+						<p><strong><a href="https://github.com/hillsrobin/swisstop" title="Visit the SwissTop GitHub repo">SwissTop</a></strong></p>
 						<div>A Swiss Army knife desktop utility to bind your keyboard to any task</div>
 					</div>
 				</div>
