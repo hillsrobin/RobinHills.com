@@ -148,6 +148,7 @@
 							<span data-weight="7">Red Hat &amp; Debian/GNU Linux</span>
 							<span data-weight="6">C# Mono/.Net</span>
 							<span data-weight="4">Subversion</span>
+							<span data-weight="1">Git</span>
 							<span data-weight="3">Apache Solr/Lucene</span>
 							<span data-weight="0.5">Oracle</span>
 							<span data-weight="0.5">CA Clarity PPM Studio</span>
