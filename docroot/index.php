@@ -39,6 +39,9 @@
 			</div>
 			<div class="col latest">
 				<h3>Latest</h3>
+				
+				<?php
+				/*
 				<div class="ahead">
 					<h4>I am mostly here</h4>
 					<div class="logo"><a href="http://twitter.com/#!/rdhills/" title="Follow me on Twitter"><img src="images/logo_twitter_huge.png" title="Follow me on Twitter" alt="Follow me on Twitter" /></a></div>
@@ -65,10 +68,10 @@
 				}
 				else
 					echo "None found";
-								
+								*/
 				?>
 				<div class="ahead">
-					<h4>... and sometimes I am here</h4>
+					<h4>I am sometimes here</h4>
 					<div class="logo"><a href="/blog.php?feed" title="My feed"><img src="images/logo_rss_not_huge.gif" title="My feed" alt="My feed" /></a></div>
 					<div class="clear"></div>
 				</div>
@@ -134,7 +137,12 @@
 					<div class="details">
 						<h3>About me</h3>
 						<div class="flagbox">
-							<p><?PHP echo ($profile !== false ? $profile['intro'] : '');?></p>
+							<p>
+							<?PHP 
+							//echo ($profile !== false ? $profile['intro'] : '');
+							?>
+							 Application developer by day and Husband of one, Father of two by night.
+							</p>
 						</div>
 						<div class="cloudbox">
 							<p>Some of the technologies I have experience with:</p>
@@ -173,8 +181,10 @@
 						
 						<p><strong><a href="http://www.careerbeacon.com" title="Visit www.careerbeacon.com">CareerBeacon</a></strong></p>
 						<div>Full service Atlantic Canadian focused Career website</div>
+						
 						<p><strong><a href="http://www.jobsinnl.ca" title="Visit www.jobsinnl.ca">JOBSinNL.ca</a></strong></p>
 						<div>Newfoundland and Labrador's comprehensive job search and posting website.</div>
+						
 						<p><strong><a href="https://www.jobgo.ca" title="Visit www.jobgo.ca">JobGO.ca</a></strong></p>
 						<div>A French language job website targeting the Queb&#233;c market.</div>
 					</div>
