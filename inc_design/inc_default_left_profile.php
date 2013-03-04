@@ -1,10 +1,11 @@
 <?PHP
 
 include_once('../inc_scripts/inc_scripts_class_profile_twitter.php');
-
+/*
 $twitter = new Twitter('rdhills');
 $twitter->useCache = true;
 $profile = $twitter->profile();
+*/
 
 $avatar = isset($profile['avatar']) && (trim($profile['avatar']) != "") ? $profile['avatar'] : "http://www.gravatar.com/avatar/".md5("robin.hills@gmail.com")."?s=48"; 
 	
@@ -15,8 +16,8 @@ $avatar = isset($profile['avatar']) && (trim($profile['avatar']) != "") ? $profi
 		<div class="avatar"><img src="<?PHP echo $avatar;?>" alt="" title="" /></div>
 		
 		<?PHP
-		if($profile !== false)
-		{
+	//	if($profile !== false)
+	//	{
 			?>
 		<div class="overview">
 			<div class="handle">
@@ -26,10 +27,15 @@ $avatar = isset($profile['avatar']) && (trim($profile['avatar']) != "") ? $profi
 				<div class="delicious"><a href="http://delicious.com/diilbert" title="Check out my bookmarks on Delicious"><img src="images/icon_delicious.gif" title="Check out my bookmarks on Delicious" alt="Check out my bookmarks on Delicious" /></a></div>
 				<div class="clear"></div>
 			</div>
-			<div class="text"><?PHP echo $profile['intro'];?></div>
+			<div class="text">
+			 Application developer by day and Husband of one, Father of two by night.
+			<?PHP 
+			//echo $profile['intro'];
+			?>
+			</div>
 		</div>
 			<?PHP
-		}
+//		}
 		?>
 		<div class="clear"></div>
 	</div>
