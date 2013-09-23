@@ -146,34 +146,34 @@
 						</div>
 						<div class="cloudbox">
 							<p>Some of the technologies I have experience with:</p>
-							<span data-weight="10">PHP 5</span>
-							<span data-weight="8">MySQL Server</span>
-							<span data-weight="2">MySQL Cluster</span>
-							<span data-weight="10">HTML</span>
-							<span data-weight="6">CSS</span>
-							<span data-weight="6">JavaScript</span>
-							<span data-weight="5">jQuery &amp; MooTools</span>
-							<span data-weight="7">Red Hat &amp; Debian/GNU Linux</span>
-							<span data-weight="6">C# Mono/.Net</span>
-							<span data-weight="4">Subversion</span>
-							<span data-weight="1">Git</span>
-							<span data-weight="3">Apache Solr/Lucene</span>
-							<span data-weight="0.5">Oracle</span>
-							<span data-weight="0.5">CA Clarity PPM Studio</span>
+							<span data-weight="11">PHP 5</span>
+							<span data-weight="9">MySQL Server</span>
+							<span data-weight="3">MySQL Cluster</span>
+							<span data-weight="11">HTML</span>
+							<span data-weight="7">CSS</span>
+							<span data-weight="7">JavaScript</span>
+							<span data-weight="6">jQuery &amp; MooTools</span>
+							<span data-weight="8">Red Hat &amp; Debian/GNU Linux</span>
+							<span data-weight="7">C# Mono/.Net</span>
+							<span data-weight="5">Subversion</span>
+							<span data-weight="2">Git</span>
+							<span data-weight="4">Apache Solr/Lucene</span>
+							<span data-weight="1">Oracle</span>
+							<span data-weight="2">CA Clarity PPM Studio</span>
+							<span data-weight="1">SQL Server</span>
 						</div>
 					</div>
 					<div class="clear"></div>
 					
 					<div class="skillbox">
 						<p>My current responsibilities include:</p>
-						<span data-weight="30">Web development and design</span>
-						<span data-weight="20">Solutions design</span>
-						<span data-weight="5">Infrastructure planning</span>
+						<span data-weight="50">Database administration</span>
+						<span data-weight="10">Web design and development</span>
 						<span data-weight="25">Server administation</span>
-						<span data-weight="10">Database optimization</span>
-						<span data-weight="10">Performance tuning</span>
+						<span data-weight="15">Performance tuning</span>
 					</div>
 					
+					<!--
 					<div class="projectbox">
 						<div>The projects I am currently working on:</div>
 						<p><strong><a href="#" title="Visit www.robinhills.com">RobinHills.com</a></strong></p>
@@ -188,6 +188,7 @@
 						<p><strong><a href="https://www.jobgo.ca" title="Visit www.jobgo.ca">JobGO.ca</a></strong></p>
 						<div>A French language job website targeting the Queb&#233;c market.</div>
 					</div>
+					-->
 				</div>
 			
 				
